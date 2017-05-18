@@ -1,0 +1,11 @@
+div{
+	border: 1px solid red;
+	}
+	.box{
+		width: 100%;
+		}
+	.main{
+		width: 1100px;
+		background-color: #ffe4e1;
+		margin: 50px auto 20px;
+		}
