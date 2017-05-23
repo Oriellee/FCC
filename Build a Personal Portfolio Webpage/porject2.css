@@ -1,8 +1,7 @@
-div{
+/*div{
 	border: 1px solid red;
-	}
+	}*/
 	.box{
-		background-color: grey;
 		}
 	.title{
 		height: 80px;
@@ -17,24 +16,113 @@ div{
 	.title ul{
 		float: right;
 		list-style: none;
-		margin-top: 22px;
-		margin-right: 30px;
-		width: 380px;
-		border: 1px solid red;
+		margin-top: 18px;
+		margin-right: 35px;
 		padding-left: 0px;
 		}
 	.title ul li{
 		float: left;
-		border: 1px solid red;
 
 		}
 	.title ul li button{
 		width: 123px;
+		height: 40px;
 		background-color: #FFE4E1;
 		color: grey;
 		font-weight: bold;
 		letter-spacing: 2px;
+		border: none;
+
 		}
 	.title ul li button:focus{
 		background-color: #fff;
+		}
+	.title ul li button:hover{
+		background-color: #FFE4E1;
+		}
+	.center{
+		width: 1100px;
+		margin-left: auto;
+		margin-right: auto;
+		}
+	.logo{
+		width: 100%;
+		background-color: grey;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		align-content: center;
+		align-items: center;
+		padding: 100px 20px;
+		}
+	.text p:nth-child(1){
+		font-size: 20px;
+		text-align: center;
+		color: white;
+		}
+	.logo hr{
+		padding: 0;
+    	border: none;
+    	border-top: 5px double white;
+    	color: grey;
+    	text-align: center;
+		}
+	.logo hr:after{
+		content: "$";
+		color: white;
+		display: inline-block;
+		position: relative;
+		top: -21px;
+		font-size: 30px;
+		background-color: grey;
+		padding: 0 10px;
+		}
+	.text p:nth-child(3){
+		font-size: 18px;
+		text-align: center;
+		color: white;
+		}
+	.logo img{
+		width: 250px;
+		text-align: left;
+		}
+	.main{
+		background-color: #fff0f5;
+		width: 1100px;
+		overflow: hidden;
+		padding: 50px;
+		}
+	.main h2{
+		font-weight: bold;
+		color: grey;
+		text-align: center;
+		}
+	.main hr{
+		padding: 0;
+		border: none;
+		border-top: 5px double grey;
+		color: grey;
+		text-align: center;
+		width: 500px;
+		}
+	.main hr:after{
+		content: "$";
+		color: grey;
+		display: inline-block;
+		position: relative;
+		top: -21px;
+		font-size: 30px;
+		background-color: #fff0f5;
+		padding: 0 10px;
+
+		}
+	.main .row{
+		margin-top: 40px;
+		text-align: center;
+		}
+	.main .col-lg-6{
+		margin-left: 30px;
+		}
+	.main img{
+		width: 470px;
 		}
