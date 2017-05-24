@@ -10,23 +10,27 @@
 </head>
 <body>
 	<div class="box">
-		<div class="title">
-			<img src="1.jpg">
+		<div class="titleback"></div>
+		<a id="about1" style="color: white;text-decoration:none;"></a>
+		<div class="center">
+			<div class="title">
+			<img  src="1.jpg">
 			<ul>
-				<li><button class="btn btn-default btn-secondary">ABOUT</button></li>
-				<li><button  class="btn btn-default btn-secondary"> PROTFOLIO</button></li>
-				<li><button  class="btn btn-default btn-secondary"> CONTACT</button></li>
+				<li><button  class="btn btn-default btn-secondary"><a href="#about1"> ABOUT</a></button></li>
+				<li><button  class="btn btn-default btn-secondary">  <a href="#about2"> PROTFOLIO</a></button></li>
+				<li><button  class="btn btn-default btn-secondary"> <a href="#about3">CONTACT</a> </button></li>
 			</ul>
 		</div>
-		<div class="center">
 			<div class="logo">
 				<div class="text col-lg-7">
-					<p>Front-End Developer and UX/UI designer, with practical experience in project management, branding strategy, and creative direction; devoted to functional programming and information architecture.</p>
+
+					<p> Front-End Developer and UX/UI designer, with practical experience in project management, branding strategy, and creative direction; devoted to functional programming and information architecture.</p>
 					<hr />
 					<p>Web Developer - User Experience Designer - Graphic Artist</p>
 				</div>
 				<img class="col-lg-5" src="1.jpg">
 			</div>
+			<a id="about2" style="color: grey;text-decoration:none;"></a>
 			<div class="main">
 				<h2>PORTFOLIO</h2>
 				<hr />
@@ -42,18 +46,21 @@
 				<img class="col-lg-6" src="1.jpg">
 				<img class="col-lg-6" src="1.jpg">
 				</div>
-				<div class="CONTACT">
+				<a id="about3" style="color: grey;text-decoration:none;"></a>
+				<div class="contact">
 					<h2>CONTACT ME</h2>
 					<hr />
 					<div class="row">
-						<ul>
-							<li><input type="text" placeholder="Name"></li>
-							<li><input type="text" placeholder="Email"></li>
-							<li><input type="text" placeholder="Phone"></li>
-							<li><textarea placeholder="Message"></textarea></li>
-							<li><button>Send</button></li>
-						</ul>
-						<div>
+						<div class="col-lg-6">
+							<ul>
+								<li><input type="text" placeholder="Name"></li>
+								<li><input type="text" placeholder="Email"></li>
+								<li><input type="text" placeholder="Phone"></li>
+								<li><textarea placeholder="Message"></textarea></li>
+								<li><button class="btn btn-primary">Send</button></li>
+							</ul>
+						</div>
+						<div class="col-lg-6">
 							<p>Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume, tips on how to solve your sudoku, random questions about the universe and the meaning of life, or even if only for some nice Fika here in stunning Toronto... just feel free to drop me a line anytime.</p>
 							<p>I promise to reply A.S.A.P.</p>
 							<p>Note: No spam/soliciting pour moi, merci :)</p>
@@ -63,8 +70,26 @@
 			</div>
 		</div>
 		<div class="bottom">
-			<div class="link"></div>
-			<div class="footer"></div>
+			<div class="link">
+				<div class="row">
+					<div class="col-lg-6">
+						<p>ABOUT THIS PAGE</p>
+						<p>Made withand by </br> <a href="#">Oriel</a></p>
+					</div>
+					<div class="col-lg-6">
+						<p>AROUND THE WEB</p>
+						<ul>
+							<li><img src="1.jpg"></li>
+							<li><img src="1.jpg"></li>
+							<li><img src="1.jpg"></li>
+							<li><img src="1.jpg"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				qlip © 2017. All Rights Reversed
+			</div>
 		</div>
 	</div>
 </body>
