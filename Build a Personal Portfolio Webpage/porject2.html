@@ -7,6 +7,20 @@
 	<title>Porject2</title>
 	<link rel="stylesheet" type="text/css" href="porject2.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+	<script src="jquery-3.2.1.slim.js"></script>
+	<script>
+	 $(document).ready(function(){
+	 	// 	var minSize = {width:500px};
+			// $(window).resize(minSize,function(event){
+			// 	var min = event.data;
+			// 	var $dom = $(this);
+			// 	if($dom.width() < min.width){
+			// 		$('#1').hide();}
+			// 	});
+			$(window).resize(function(){
+				$('#1').hide();
+			});
+			}); </script>
 </head>
 <body>
 	<div class="box">
@@ -14,13 +28,13 @@
 		<a id="about1" style="color: white;text-decoration:none;"></a>
 		<div class="center">
 			<div class="title">
-			<img  src="1.jpg">
-			<ul>
-				<li><button  class="btn btn-default btn-secondary"><a href="#about1"> ABOUT</a></button></li>
-				<li><button  class="btn btn-default btn-secondary">  <a href="#about2"> PROTFOLIO</a></button></li>
-				<li><button  class="btn btn-default btn-secondary"> <a href="#about3">CONTACT</a> </button></li>
-			</ul>
-		</div>
+				<img  src="1.jpg">
+				<ul id="1">
+					<li><button   class="btn btn-default btn-secondary"><a href="#about1"> ABOUT</a></button></li>
+					<li><button  class="btn btn-default btn-secondary">  <a href="#about2"> PROTFOLIO</a></button></li>
+					<li><button  class="btn btn-default btn-secondary"> <a href="#about3">CONTACT</a> </button></li>
+				</ul>
+			</div>
 			<div class="logo">
 				<div class="text col-lg-7">
 
@@ -45,45 +59,43 @@
 				<div class="row">
 				<img class="col-lg-6" src="1.jpg">
 				<img class="col-lg-6" src="1.jpg">
-				</div>
+			</div>
 				<a id="about3" style="color: grey;text-decoration:none;"></a>
-				<div class="contact">
-					<h2>CONTACT ME</h2>
-					<hr />
-					<div class="row">
-						<div class="col-lg-6">
-							<ul>
-								<li><input type="text" placeholder="Name"></li>
-								<li><input type="text" placeholder="Email"></li>
-								<li><input type="text" placeholder="Phone"></li>
-								<li><textarea placeholder="Message"></textarea></li>
-								<li><button class="btn btn-primary">Send</button></li>
-							</ul>
-						</div>
-						<div class="col-lg-6">
-							<p>Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume, tips on how to solve your sudoku, random questions about the universe and the meaning of life, or even if only for some nice Fika here in stunning Toronto... just feel free to drop me a line anytime.</p>
-							<p>I promise to reply A.S.A.P.</p>
-							<p>Note: No spam/soliciting pour moi, merci :)</p>
-						</div>
+			<div class="contact">
+				<h2>CONTACT ME</h2>
+				<hr />
+				<div class="row">
+					<div class="col-lg-6 col-xs-12">
+						<ul>
+							<li><input type="text" placeholder="Name"></li>
+							<li><input type="text" placeholder="Email"></li>
+							<li><input type="text" placeholder="Phone"></li>
+							<li><textarea placeholder="Message"></textarea></li>
+							<li><button class="btn btn-primary">Send</button></li>
+						</ul>
+					</div>
+					<div class="col-lg-6 col-xs-12">
+						<p class="col-xs-12">Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume, tips on how to solve your sudoku, random questions about the universe and the meaning of life, or even if only for some nice Fika here in stunning Toronto... just feel free to drop me a line anytime.</p>
+						<p  class="col-xs-12">I promise to reply A.S.A.P.</p>
+						<p class="col-xs-12">Note: No spam/soliciting pour moi, merci :)</p>
 					</div>
 				</div>
+			</div>
 			</div>
 		</div>
 		<div class="bottom">
 			<div class="link">
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-lg-6 col-sm-6  col-xs-12">
 						<p>ABOUT THIS PAGE</p>
-						<p>Made withand by </br> <a href="#">Oriel</a></p>
+						<p>Made withand by </br> <a href="https://www.google.com/">Oriel</a></p>
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-6 col-sm-6  col-xs-12">
 						<p>AROUND THE WEB</p>
-						<ul>
-							<li><img src="1.jpg"></li>
-							<li><img src="1.jpg"></li>
-							<li><img src="1.jpg"></li>
-							<li><img src="1.jpg"></li>
-						</ul>
+						<img src="1.jpg">
+						<img src="1.jpg">
+						<img src="1.jpg">
+						<img src="1.jpg">
 					</div>
 				</div>
 			</div>

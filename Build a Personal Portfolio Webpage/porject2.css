@@ -88,13 +88,13 @@
 		text-align: center;
 		color: white;
 		}
-	.logo img{
-		width: 350px;
-		text-align: left;
-		}
+	
 	.main{
 		background-color: #fff0f5;
 		width: 1100px;
+		display: flex;
+		flex-flow: column nowrap;
+		align-content: center;
 		overflow: hidden;
 		padding: 70px 0px 0px;
 		}
@@ -103,6 +103,7 @@
 		color: grey;
 		text-align: center;
 		}
+
 	.main hr{
 		padding: 0;
 		border: none;
@@ -120,21 +121,25 @@
 		font-size: 30px;
 		background-color: #fff0f5;
 		padding: 0 10px;
-
 		}
 	.main .row{
-		margin: 50px 60px 80px 40px;
+		margin-left: 40px;
 		text-align: center;
+		}
+	.main .row:nth-child(5){
+		margin-bottom: 70px;
 		}
 	.main .col-lg-6{
 		margin-left: 30px;
 		}
 	.main img{
 		width: 470px;
+		margin-top: 50px;
 		}
 	.contact{
 		border-top: 1px solid grey;
 		padding-top: 50px;
+
 		}
 	.contact h2{
 		margin-top: 50px;
@@ -143,12 +148,11 @@
 		list-style-type: none;
 		padding: 0px;
 		display: inline-block;
+
 		}
 	.contact .col-lg-6{
 		margin:0px;
 		padding: 0px;
-		}
-	.contact ul li{
 		}
 	.contact p{
 		display: inline-block;
@@ -161,7 +165,7 @@
 		}
 	.contact input,textarea{
 		border: none;
-		width: 400px;
+		width: 500px;
 		height: 70px;
 		border-bottom: 1px solid grey;
 		background-color: #fff0f5;
@@ -175,11 +179,15 @@
 		font-size: 25px;
 		padding-top: 30px;
 		}
+	.contact ul li:nth-child(5){
+		text-align: left;
+		margin-top: 20px;
+		}
 	.contact button{
 		width: 100px;
 		height: 40px;
-		float: left;
-		margin: 40px 10px;
+		display: inline;
+
 		}
 	.contact .row{
 		margin-bottom: 0px;
@@ -219,7 +227,7 @@
 		width: 70px;
 		display: inline;
 		}
-	.link ul li:hover{
+	.link img:hover{
 		opacity: 0.5;
 		}
 	.footer{
@@ -230,5 +238,63 @@
 		text-align: center;
 		padding-top: 20px;
 		color: grey;
-
 		}
+@media screen and(min-width: 1100px){
+	.title,.center,.main{
+		width: 1100px;
+		}
+	.logo img{
+		width: 350px;
+		text-align: left;
+		}
+	.main hr{
+		width: 500px;
+		}
+	.main img{
+		width: 470px;
+		}
+	.main .row:nth-child(5){
+		margin-bottom: 70px;
+		}
+	}
+@media screen and (max-width: 1200px){
+	.title,.center,.main{
+		width: 100%;
+		}
+	.logo img{
+		width: 50%;
+		max-width: 350px;
+		min-width: 200px;
+		margin-top: 50px;
+		}
+	.main hr{
+		max-width: 500px;
+		min-width: 100px;
+		width: 70%;
+		}
+	.main img{
+		width: 80%;
+		max-width: 470px;
+		min-width: 200px;
+		margin-top: 30px;
+		}
+	.main .row{
+		margin: 0;
+		text-align: center;
+		}
+	.contact ul{
+		max-width: 500px;
+		min-width: 50px;
+		width: 90%;
+	}
+	.contact .col-xs-12{
+		margin:10px;
+		padding-top: 10px;
+		}
+	.contact p:nth-child(3){
+		margin-top: 10px;
+		}
+	.link{
+		padding: 40px 0px;
+		}
+}
