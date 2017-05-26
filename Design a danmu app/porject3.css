@@ -1,0 +1,52 @@
+
+body {
+	text-align: center;
+	}
+.box{
+	height: 402px;
+	border: 1px solid grey;
+	margin: 30px;
+	}
+.box input{
+	width: 100%;
+	height: 50px;
+	border: none;
+	outline: none;
+	}
+.white{
+	height: 40px;
+	margin: 20px;
+	}
+.row{
+	height: 30px;
+	}
+.row button{
+	width: 150px;
+	margin: 5px 10px;
+	height: 35px;
+	display: inline-block;
+	outline: none;
+	}
+.row button:nth-child(1){
+	border-color: #FF8888;
+	background-color: white;
+	color: #FF8888;
+	border-radius: 5px;
+	}
+.row button:nth-child(2){
+	border-color: grey;
+	background-color: white;
+	color: grey;
+	border-radius: 5px;
+	box-shadow: none;
+	}
+@media all and (min-width: 451px){
+	.white{
+		width: 400px;
+	}
+	}
+@media all and (max-width: 450px){
+	.white{
+		width: 80%;
+	}
+	}

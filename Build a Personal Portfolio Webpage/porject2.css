@@ -239,24 +239,6 @@
 		padding-top: 20px;
 		color: grey;
 		}
-@media screen and(min-width: 1100px){
-	.title,.center,.main{
-		width: 1100px;
-		}
-	.logo img{
-		width: 350px;
-		text-align: left;
-		}
-	.main hr{
-		width: 500px;
-		}
-	.main img{
-		width: 470px;
-		}
-	.main .row:nth-child(5){
-		margin-bottom: 70px;
-		}
-	}
 @media screen and (max-width: 1200px){
 	.title,.center,.main{
 		width: 100%;
@@ -277,6 +259,9 @@
 		max-width: 470px;
 		min-width: 200px;
 		margin-top: 30px;
+		}
+	.main .col-lg-6{
+		margin-left: 0px;
 		}
 	.main .row{
 		margin: 0;
