@@ -12,19 +12,37 @@
 </head>
 <body>
 <div class="box">
-	<input type="text">
-	<input type="text">
-	<input type="text">
-	<input type="text">
-	<input type="text">
-	<input type="text">
-	<input type="text">
-	<input type="text">
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
 </div>
 <input class="white" type="text">
 	<div class="row">
-		<button class="center-block">发射</button>
-		<button class="center-block">清屏</button>
+		<button class="center-block shut">发射</button>
+		<button class="center-block clear">清屏</button>
 	</div>
+<script type="text/javascript">
+	var box1 = document.querySelector(".box");
+	var p1 = document.querySelectorAll(".box p");
+	var white = document.querySelector(".white");
+	var shut = document.querySelector(".shut");
+	var clear1 = document.querySelector(".clear");
+
+	var text1;
+	shut.addEventListener("click",shutText);
+	// clear1.addEventListener("click",clearText);
+	function shutText(){
+		for(var i=0;i<=p1.length;i++){
+			p1[i].innerHTML=== white.value;
+			console.log(p1[i].innerHTML);
+		}
+	}
+
+</script>
 </body>
 </html>
