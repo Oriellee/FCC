@@ -200,13 +200,24 @@
 		padding: 60px 100px ;
 		}
 
-	.link img{
-		width: 50px;
-		}
-	.link .col-lg-6{
+	.lian div{
 		display: inline-block;
+		width: 50px;
+		height: 50px;
+		background-color: grey;
+		border-radius: 25px;
+		border: 2px solid #fff;
 		text-align: center;
+		line-height: 47px;
+		color: #fff;
+		font-size: 12px;
+		font-weight: bold;
+		text-decoration: none;
 		}
+	.lian div:hover{
+		background-color: #fff;
+		color: #8B008B;
+	}
 	.link p{
 		font-size: 20px;
 		color: #fff;
