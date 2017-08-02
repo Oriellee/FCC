@@ -13,6 +13,7 @@
 	<div class="box">
 		<div class="titleback"></div>
 		<a id="about1" style="color: white;text-decoration:none;"></a>
+
 		<div class="center">
 			<div class="title">
 				<img  src="1.jpg">
@@ -23,6 +24,11 @@
 				</ul>
 				<button id="btn">=</button>
 			</div>
+			<ul id="ul2">
+					<li><button   class="btn btn-default btn-secondary"><a href="#about1"> ABOUT</a></button></li>
+					<li><button  class="btn btn-default btn-secondary">  <a href="#about2"> PROTFOLIO</a></button></li>
+					<li><button  class="btn btn-default btn-secondary"> <a href="#about3">CONTACT</a> </button></li>
+			</ul>
 			<div class="logo">
 				<div class="text col-lg-7">
 
@@ -95,21 +101,16 @@
 	</div>
 	<script src="jquery-3.2.1.slim.js"></script>
 	<script type="text/javascript">
-		var ul1 = document.querySelector("#ul1");
-		var li1 = document.querySelectorAll("#ul1 li");
-
-		// function menu(){
-		// 	$(window).resize(function(){
-  //         	var w = $(window).width();
-  //         	console.log(w);
-  //         	if(w<768){
-		// 		ul1.innerHTML = ""; 
-		// 	}
-  //         	});
-			
-		// }
-		// menu();
-		// console.log(w);
+	var btn = document.querySelector("#btn");
+	var ul2 = document.querySelector("#ul2");
+	var ul1 = document.querySelector("#ul1");
+	btn.onclick = function(){
+		if(ul2.style.display == "inline"){
+			ul2.style.display = "none";
+		}else{
+			ul2.style.display = "inline";
+			}
+		}
 	</script>
 
 
