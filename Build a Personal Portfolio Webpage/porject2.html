@@ -16,11 +16,12 @@
 		<div class="center">
 			<div class="title">
 				<img  src="1.jpg">
-				<ul id="1">
+				<ul id="ul1">
 					<li><button   class="btn btn-default btn-secondary"><a href="#about1"> ABOUT</a></button></li>
 					<li><button  class="btn btn-default btn-secondary">  <a href="#about2"> PROTFOLIO</a></button></li>
 					<li><button  class="btn btn-default btn-secondary"> <a href="#about3">CONTACT</a> </button></li>
 				</ul>
+				<button id="btn">=</button>
 			</div>
 			<div class="logo">
 				<div class="text col-lg-7">
@@ -31,7 +32,7 @@
 				</div>
 				<img class="col-lg-5" src="1.jpg">
 			</div>
-			<a id="about2" style="color: grey;text-decoration:none;"></a>
+				<a id="about2" style="color: grey;text-decoration:none;"></a>
 			<div class="main">
 				<h2>PORTFOLIO</h2>
 				<hr />
@@ -90,6 +91,27 @@
 				qlip © 2017. All Rights Reversed
 			</div>
 		</div>
+		<button id="backtop">^</button>
 	</div>
+	<script src="jquery-3.2.1.slim.js"></script>
+	<script type="text/javascript">
+		var ul1 = document.querySelector("#ul1");
+		var li1 = document.querySelectorAll("#ul1 li");
+
+		// function menu(){
+		// 	$(window).resize(function(){
+  //         	var w = $(window).width();
+  //         	console.log(w);
+  //         	if(w<768){
+		// 		ul1.innerHTML = ""; 
+		// 	}
+  //         	});
+			
+		// }
+		// menu();
+		// console.log(w);
+	</script>
+
+
 </body>
 </html>

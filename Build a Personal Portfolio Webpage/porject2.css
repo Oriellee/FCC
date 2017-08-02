@@ -18,10 +18,10 @@
 		z-index: 999;
 		}
 	.title img{
-		width: 60px;
-		height: 60px;
+		width: 50px;
+		height: 50px;
 		margin-left: 20px;
-		margin-top: 10px;
+		margin-top: 15px;
 		}
 	.title ul{
 		float: right;
@@ -61,6 +61,9 @@
 		align-items: center;
 		padding: 180px 20px 100px;
 		}
+	.logo img{
+		border-radius: 25%;
+	}
 	.text p:nth-child(1){
 		font-size: 20px;
 		text-align: center;
@@ -88,7 +91,23 @@
 		text-align: center;
 		color: white;
 		}
-	
+	#btn{
+		width: 40px;
+		height: 40px;
+		background-color: #FFE4E1;
+		border: 1px solid #5F9EA0;
+		color: #5F9EA0;
+		font-size: 20px;
+		font-weight: bold;
+		float: right;
+		margin-top: 20px;
+		margin-right: 20px;
+		outline: none;
+		display: none;
+	}
+	#btn:hover{
+		background-color: #D3D3D3;
+	}
 	.main{
 		background-color: #fff0f5;
 		width: 1100px;
@@ -198,6 +217,7 @@
 	.link{
 		background-color: grey;
 		padding: 60px 100px ;
+		text-align: center;
 		}
 
 	.lian div{
@@ -250,6 +270,19 @@
 		padding-top: 20px;
 		color: grey;
 		}
+	#backtop{
+		width:45px;
+		height: 45px;
+		background-color: #E0FFFF;
+		border-radius: 100%;
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		font-size: 40px;
+		
+		outline: none;
+		border: none;
+	}
 @media screen and (max-width: 1200px){
 	.title,.center,.main{
 		width: 100%;
@@ -293,4 +326,13 @@
 	.link{
 		padding: 40px 0px;
 		}
+}
+@media screen and (max-width: 768px){
+	#ul1{
+		display: none;
+	}
+	#btn{
+		display: inline;
+	}
+	
 }
