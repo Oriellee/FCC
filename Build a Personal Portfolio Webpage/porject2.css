@@ -220,10 +220,11 @@
 	.contact input,textarea{
 		border: none;
 		width: 500px;
-		height: 70px;
+		height: 60px;
 		border-bottom: 1px solid grey;
 		background-color: #fff0f5;
 		font-size: 25px;
+		padding: 0px;
 		}
 	.contact input,textarea:focus{
 		outline: none;
@@ -255,7 +256,7 @@
 		text-align: center;
 		}
 
-	.lian div{
+	.lian button{
 		display: inline-block;
 		width: 50px;
 		height: 50px;
@@ -268,8 +269,9 @@
 		font-size: 12px;
 		font-weight: bold;
 		text-decoration: none;
+		outline: none;
 		}
-	.lian div:hover{
+	.lian button:hover{
 		background-color: #fff;
 		color: #8B008B;
 	}
@@ -320,6 +322,15 @@
 		outline: none;
 		display: none;
 	}
+	.row p{
+		padding: 0;
+		float: left;
+		margin: 0;
+		font-size: 17px;
+		font-weight: bold;
+		color: #008080;
+		display: none;
+		}
 @media screen and (max-width: 1200px){
 	.title,.center,.main{
 		width: 100%;

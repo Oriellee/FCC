@@ -11,37 +11,76 @@
 	<title>porject3</title>
 </head>
 <body>
-<div class="box">
-	<p></p>
-	<p></p>
-	<p></p>
-	<p></p>
-	<p></p>
-	<p></p>
-	<p></p>
-	<p></p>
-</div>
-<input class="white" type="text">
+<ul class="box">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+<input class="input" type="text">
 	<div class="row">
 		<button class="center-block shut">发射</button>
 		<button class="center-block clear">清屏</button>
 	</div>
 <script type="text/javascript">
-	var box1 = document.querySelector(".box");
-	var p1 = document.querySelectorAll(".box p");
-	var white = document.querySelector(".white");
+	var box = document.querySelector(".box");
+	var li = document.querySelectorAll(".box li");
+	var input = document.querySelector(".input");
 	var shut = document.querySelector(".shut");
-	var clear1 = document.querySelector(".clear");
-
-	var text1;
-	shut.addEventListener("click",shutText);
-	// clear1.addEventListener("click",clearText);
-	function shutText(){
-		for(var i=0;i<=p1.length;i++){
-			p1[i].innerHTML=== white.value;
-			console.log(p1[i].innerHTML);
+	var clear = document.querySelector(".clear");
+	
+	function random(min,max){
+		var num = Math.floor(Math.random()*(max-min)+min);
+		return num;
+	}
+	shut.onclick = function(){
+		var inputtext = input.value;
+		var text = li[random(0,li.length)];
+		console.log(li.length);
+		text.textContent = inputtext;
+		text.style.color = 'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) +')';
+		if(box.innerHTML=== ""){
+			
+		}else{
+			alert("haha");
 		}
 	}
+	// function scroll(){
+ //  var container = document.querySelector(".box");
+ //    original = container.querySelectorAll(".box li");
+ //    speed = arguments[1] || 10,
+ //    clone = original.cloneNode(true);
+ //    container.appendChild(clone);
+ //    var rolling = function(){
+ //      if(container.scrollTop == clone.offsetTop){
+ //        container.scrollTop = 0;
+ //      }else{
+ //        container.scrollTop++;
+ //      }
+ //    }
+ //    var timer = setInterval(rolling,speed)//设置定时器
+ //    container.onmouseover=function() {clearInterval(timer)}//鼠标移到marquee上时，清除定时器，停止滚动
+ //    container.onmouseout=function() {timer=setInterval(rolling,speed)}//鼠标移开时重设定时器
+ //  }
+ //  window.onload = function(){
+  
+ //  }
+  
+
+
+	// var text;
+	// 
+	// // clear1.addEventListener("click",clearText);
+	// function shutText(){
+	// 	for(var i=0;i<=p1.length;i++){
+	// 		p1[i].innerHTML=== white.value;
+	// 		console.log(p1[i].innerHTML);
+	// 	}
+	// }
 
 </script>
 </body>

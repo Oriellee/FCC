@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>生成随机短语</title>
+	<style type="text/css">
+		body{
+			background-color: rgb(119, 177, 169);
+			min-width: 520px;
+		}
+		.box{
+			width: 520px;
+			min-height: 180px;
+			background-color: white;
+			border-radius: 5px;
+			margin: 70px auto 0;
+			color: rgb(119, 177, 169);
+			padding:30px;
+			overflow: hidden;
+		}
+		.quote,.whiter{
+			width: 100%;
+			min-height: 35px;
+			text-align: center;
+			padding: 10px 0;
+			font-size: 1.75em;
+			font-weight: 500;
+			font-family: 'Raleway', sans-serif;
+			line-height: 35px;
+			margin: 0px;
+		}
+		.writer{
+			font-size: 1.2em;
+			font-weight: 550;
+			text-align: right;
+			margin-right: 20px;
+		}
+		.btn{
+			margin-top: 10px;
+		}
+		.weibo,.twitter,.new-quote{
+			width: 45px;
+			height: 45px;
+			border-radius: 5px;
+			border: none;
+			background-color: rgb(119, 177, 169);
+			padding:0;
+			color: #fff;
+			margin:0 3px;
+			font-size: 20px;
+			font-weight: bolder;
+			outline: none;
+		}
+		.weibo:hover,.twitter:hover,.new-quote:hover{
+			opacity: 0.9;
+		}
+		.twitter{
+			font-size: 20px;
+		}
+		.new-quote{
+			width: 90px;
+			float: right;
+			font-size: 15px;
+			font-weight: normal;
+		}
+		.footer{
+			width: 97%;
+			text-align: center;
+			color: #fff;
+			font-size: 15px;
+			font-family: 'Raleway', sans-serif;
+  			font-weight: 400;
+		}
+		.footer a{
+			text-decoration: none;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="box">
+		<h1 class="quote"> “业精于勤，荒于嬉；行成于思，毁于随。”</h1>
+		<p class="writer"> —— 韩愈</p>
+		<div class="btn">
+			<button class="weibo">Wb</button>
+			<button class="twitter">T</button>
+			<button class="new-quote">New quote</button>
+		</div>
+	</div>
+	<p class="footer">by <a href="https://github.com/Oriellee">Oriel</a></p>
+	<script type="text/javascript">
+	var box = document.querySelector(".box");
+	var body = document.querySelector("body");
+	var quote = document.querySelector(".quote");
+	var writer =document.querySelector(".writer");
+	var weibo = document.querySelector(".weibo");
+	var twitter = document.querySelector(".twitter");
+	var newquote = document.querySelector(".new-quote");
+		var data = [
+			["阅读使人充实，会谈使人敏捷，写作使人精确。","培根"],
+			["最大的骄傲于最大的自卑都表示心灵的最软弱无力。","斯宾诺莎"],
+			["意志坚强的人能把世界放在手中像泥块一样任意揉捏。","歌德"],
+			["最具挑战性的挑战莫过于提升自我。","迈克尔·F·斯特利"],
+			["一个人即使已登上顶峰，也仍要自强不息。","罗素·贝克"],
+			["业精于勤，荒于嬉；行成于思，毁于随。","韩愈"],
+			["一切节省，归根到底都归结为时间的节省。","马克思"],
+			["意志命运往往背道而驰，决心到最后会全部推倒。","莎士比亚"],
+			["只有把抱怨环境的心情，化为上进的力量，才是成功的保证。","罗曼·罗兰"],
+			["只有永远躺在泥坑里的人，才不会再掉进坑里。","黑格尔"],
+			["节制使快乐增加并使享受加强。","德谟克利特"]
+		];
+		var colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
+		function random(min,max){
+			var num = Math.floor(Math.random()*(max-min)+min);
+			return num;
+		}
+
+		newquote.onclick = function(){
+			var newtext = random(0,data.length);
+			var newColor = random(0,colors.length);
+			body.style.backgroundColor =quote.style.color = writer.style.color = weibo.style.backgroundColor  = twitter.style.backgroundColor = newquote.style.backgroundColor= colors[newColor];
+			quote.textContent = "“"+data[newtext][0]+"”";
+			writer.textContent = "—— "+data[newtext][1];
+		}
+		twitter.addEventListener('click', function() {
+     	 open('https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent(quote.textContent  + writer.textContent));
+  });
+		weibo.onclick = function(){
+			open('https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption='+encodeURIComponent(writer)+'&content=' + encodeURIComponent(quote)+'&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button');
+		}
+	</script>
+</body>
+</html>
