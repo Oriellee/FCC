@@ -15,7 +15,7 @@
 		<a id="about1" style="color: white;text-decoration:none;"></a>
 
 		<div class="center">
-			<div class="title">
+			<div id="title">
 				<img  src="1.jpg">
 				<ul id="ul1">
 					<li><button   class="btn btn-default btn-secondary"><a href="#about1"> ABOUT</a></button></li>
@@ -62,19 +62,19 @@
 					<div class="col-lg-6 col-xs-12">
 						<ul id="list1">
 							<li>
-							<p id="p1">Name</p>
+							<p id="Name">Name</p>
 								<input type="text" placeholder="Name"></li>
-								<p id="p2">Email</p>
+								<p id="Email">Email</p>
 								<li><input type="text" placeholder="Email"></li>
-								<p id="p3">Phone</p>
+								<p id="Phone">Phone</p>
 								<li><input type="text" placeholder="Phone"></li>
-								<p id="p4">Message</p>
+								<p id="Message">Message</p>
 								<li><textarea placeholder="Message"></textarea></li>
 								<li><button class="btn btn-primary">Send</button></li>
 						</ul>
 					</div>
 					<div class="col-lg-6 col-xs-12">
-						<p class="col-xs-12">Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume, tips on how to solve your sudoku, random questions about the universe and the meaning of life, or even if only for some nice Fika here in stunning Toronto... just feel free to drop me a line anytime.</p>
+						<p class="col-xs-12 text">Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume, tips on how to solve your sudoku, random questions about the universe and the meaning of life, or even if only for some nice Fika here in stunning Toronto... just feel free to drop me a line anytime.</p>
 						<p  class="col-xs-12">I promise to reply A.S.A.P.</p>
 						<p class="col-xs-12">Note: No spam/soliciting pour moi, merci :)</p>
 					</div>
@@ -106,12 +106,10 @@
 	</div>
 	<script src="jquery-3.2.1.slim.js"></script>
 	<script type="text/javascript">
-	var btn = document.querySelector("#btn");
-	var ul2 = document.querySelector("#ul2");
-	var ul1 = document.querySelector("#ul1");
-	var list1 = document.querySelector("#list1");
+	var $ = function(id){
+		return document.getElementById(id);
+	}//获取对象。
 	var input1 = document.querySelectorAll("#list1 li input,textarea");
-	
 	btn.onclick = function(){
 		if(ul2.style.display == "inline"){
 			ul2.style.display = "none";
@@ -119,6 +117,56 @@
 			ul2.style.display = "inline";
 			}
 		}
+	// 设置点击按钮弹出层的隐藏和显示。
+
+	//点击返回顶端。
+	var timer = null;
+	backtop.onclick = function(){
+		if (timer != null) {
+			return;
+		}
+		timer = setInterval(function(){
+			var osTop =document.body.scrollTop;
+			var speed = Math.floor(-osTop / 6);  //速度随距离动态变化，越来越小
+			document.body.scrollTop = osTop + speed;
+			isTop = true;
+			if(osTop == 0){
+				clearInterval(timer); //回到顶部时关闭定时器
+				timer = null;
+			}
+		},30);
+
+	}
+
+	//点击输入信息时弹出字母标识。
+	console.log(list1);
+	list1.onclick = function(){
+		self(event.target);
+	}
+	function self(value){
+		switch(value.placeholder){
+			case "Name":
+			Name.style.display = "block";
+			break;
+			case "Email":
+			Email.style.display = "block";
+			break;
+			case "Phone":
+			Phone.style.display = "block";
+			break;
+			case "Message":
+			Message.style.display = "block";
+			break;
+		}
+	}
+	function show(){
+		var osTop = document.body.scrollTop;
+		if(osTop>0){
+			title.style.display = "none";
+		}
+		console.log(osTop);
+	}
+	show();
 	</script>
 
 

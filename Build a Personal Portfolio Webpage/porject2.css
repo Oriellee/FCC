@@ -3,7 +3,7 @@
 	}*/
 	.box{
 		}
-	.titleback{
+	#titleback{
 		width: 100%;
 		height: 80px;
 		background-color:#FFE4E1;
@@ -16,30 +16,30 @@
 		margin-right: auto;
 
 		}
-	.title{
+	#title{
 		width: 1100px;
 		height: 80px;
 		background-color:#FFE4E1;
 		position: fixed;
 		z-index: 999;
 		}
-	.title img{
+	#title img{
 		width: 50px;
 		height: 50px;
 		margin-left: 20px;
 		margin-top: 15px;
 		}
-	.title #ul1{
+	#title #ul1{
 		float: right;
 		list-style-type: none;
 		margin-top: 18px;
 		margin-right: 20px;
 		padding-left: 0px;
 		}
-	.title #ul1 li{
+	#title #ul1 li{
 		display: inline;
 		}
-	.title #ul1 li button{
+	#title #ul1 li button{
 		width: 123px;
 		height: 40px;
 		background-color: #FFE4E1;
@@ -48,10 +48,10 @@
 		letter-spacing: 2px;
 		border: none;
 		}
-	.title #ul1 li button:hover{
+	#title #ul1 li button:hover{
 		box-shadow:0px 2px 4px 2px rgba(5%,5%,5%,0.1);
 		}
-	.title #ul1 li button a{
+	#title #ul1 li button a{
 		text-decoration: none;
 		}
 	#ul2{
@@ -193,6 +193,7 @@
 	.contact{
 		border-top: 1px solid grey;
 		padding-top: 50px;
+		text-align: left;
 
 		}
 	.contact h2{
@@ -247,6 +248,11 @@
 	.contact .row{
 		margin-bottom: 0px;
 		}
+	#list1 p{
+		display: none;
+		text-align: left;
+		width: 100%;
+	}
 	.bottom{
 		width: 100%;
 		}
@@ -282,6 +288,7 @@
 		}
 	.link p:nth-child(2){
 		font-size: 18px;
+		padding: 20px;
 		}
 	.link ul{
 		list-style-type: none;
@@ -323,16 +330,17 @@
 		display: none;
 	}
 	.row p{
-		padding: 0;
-		float: left;
-		margin: 0;
+		padding: 0px;
+		margin:0px;
 		font-size: 17px;
 		font-weight: bold;
 		color: #008080;
-		display: none;
 		}
+	.row .text{
+		padding: 50px;
+	}
 @media screen and (max-width: 1200px){
-	.title,.center,.main{
+	#title,.center,.main{
 		width: 100%;
 		}
 	#ul2{
