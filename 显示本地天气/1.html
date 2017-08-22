@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>全国天气查询小应用</title>
+    <link rel="icon" href="favicon.ico"/>
+    <style type="text/css">
+        body,div,h1,h2,h3,h4,h5,h6,input,header,main,ul,li,footer,p,span,section{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    height: 100%;
+    min-width: 960px;
+}
+body{
+    background: url(images/bg.jpg) no-repeat;
+    font-size: 14px;
+    font-family: "microsoft yahei";
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    color: #222;
+}
+header{
+    height: 50px;
+    padding-left: 80px;
+    background: rgba(100, 100, 100, 0.6);
+}
+h1{
+    padding-right: 30px;
+    line-height: 50px;
+    font-size: 30px;
+    float: left;
+}
+#weather_search{
+    margin-top: 10px;
+    float: left;
+}
+#weather_search span{
+    height: 30px;
+    float: left;
+}
+#text{
+    padding: 0 6px 0 6px;
+    background: #fff;
+    font-size: 14px;
+    width: 240px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+#btn{
+    width: 70px;
+    height: 30px;
+    border: none;
+    background: rgba(255,255,255,0.5);
+    color: #333;
+    outline: none;
+    cursor: pointer;
+}
+#btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+section{
+    padding-top: 90px;
+}
+#today_container{
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(100,100,100,0.3);
+    overflow: hidden;
+}
+#today_container div img {
+    margin: 0 50px 0 40px;
+    float: left;
+}
+ .main_info{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+ .main_info span{
+    margin: 0 15px;
+}
+ .main_info span:first-child{
+    margin-left: 0;
+}
+ .more_info {
+    margin-top: 3px;
+    font-size: 16px;
+}
+ .more_info span{
+    margin: 0 15px 0 0;
+}
+#future_container{
+    margin: 80px auto 0 auto;
+    width: 950px;
+    text-align: center;
+    overflow: hidden;
+}
+#future_container div{
+    float: left;
+    width: 150px;
+    padding: 20px 0;
+    margin: 0 20px;
+    background: rgba(100, 100, 100, 0.3);
+}
+#future_container div:hover{
+    background: rgba(200,200,200,0.5);
+}
+#future_container div span{
+    display: block;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+footer div{
+    width: 175px;
+    margin: 0 auto;
+}
+    </style>
+</head>
+<body>
+<header>
+    <h1>WEATHER</h1>
+    <div id="weather_search">
+        <span><input id="text" type="text" placeholder="请输入您要查询的城市" /></span>
+        <span><input id="btn" type="button" value=" 查询天气" /></span>
+    </div>
+</header>
+    <section>
+        <div id="today_container">
+            <div>
+                <img src="./images/weather_icon/1.png" alt="今日天气"/>
+            </div>
+            <div>
+                <div class="main_info"><span class="info">城市</span>|<span class="info">201X-XX-XX</span>|<span class="info">星期X</span>|<span class="info">---</span> </div>
+                <div class="more_info">今日温度：<span class="info">-----</span>风力：<span class="info">-----</span>风向：<span class="info">-----</span>PM2.5：<span class="info">--</span></div>
+                <div class="more_info">紫外线强度：<span class="info">---</span>洗车指数：<span class="info">---</span>感冒指数：<span class="info">---</span>穿衣指数：<span class="info">---</span></div>
+            </div>
+        </div>
+        <div id="future_container">
+            <div class="future_box">
+                <img src="./images/weather_icon/1.png" alt="天气"/>
+                <span class="future_info">201X-XX-XX</span>
+                <span class="future_info">星期X</span>
+                <span class="future_info">--</span><span class="future_info">12-16℃</span>
+            </div>
+            <div class="future_box">
+                <img src="./images/weather_icon/3.png" alt="天气"/>
+                <span class="future_info">201X-XX-XX</span>
+                <span class="future_info">星期X</span>
+                <span class="future_info">--</span><span class="future_info">12-16℃</span>
+            </div>
+            <div class="future_box">
+                <img src="./images/weather_icon/2.png" alt="天气"/>
+                <span class="future_info">201X-XX-XX</span>
+                <span class="future_info">星期X</span>
+                <span class="future_info">--</span><span class="future_info">12-16℃</span>
+            </div>
+            <div class="future_box">
+                <img src="./images/weather_icon/4.png" alt="天气"/>
+                <span class="future_info">201X-XX-XX</span>
+                <span class="future_info">星期X</span>
+                <span class="future_info">--</span><span class="future_info">12-16℃</span>
+            </div>
+            <div class="future_box">
+                <img src="images/weather_icon/5.png" alt="天气"/>
+                <span class="future_info">201X-XX-XX</span>
+                <span class="future_info">星期X</span>
+                <span class="future_info">-</span><span class="future_info">12-16℃</span>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div>design and code by zsq</div>
+    </footer>
+    <script>
+        jsonp('https://api.map.baidu.com/api?v=2.0&ak=Dv1NMU23dh1sGS9n2tUouDEYY96Dfzh3&s=1&callback=getCity');
+window.onload = function () {
+    //请求天气车数据
+    btn.addEventListener('click',function () {
+        jsonp(createUrl()[0]);
+        jsonp(createUrl()[1]);
+    });
+    text.addEventListener('keydown', function (e){
+        if (e.keyCode == 13) {
+            jsonp(createUrl()[0]);
+            jsonp(createUrl()[1]);
+        }
+    });
+}
+
+function getCity() {
+    function city(result) {
+        //去掉城市名后的"市"
+        var city = result.name.substring(0, result.name.length - 1);
+        //请求当前城市的天气数据
+        jsonp(createUrl(city)[0]);
+        jsonp(createUrl(city)[1]);
+    }
+    var cityName = new BMap.LocalCity();
+    cityName.get(city);
+}
+
+// 数据请求函数
+function jsonp(url) {
+    var script = document.createElement('script');
+    script.src = url;
+    document.body.insertBefore(script, document.body.firstChild);
+    document.body.removeChild(script);
+}
+
+//数据请求成功回调函数，用于将获取到的数据放入页面相应位置
+function getWeather(response) {
+    var oSpan = document.getElementsByClassName('info');
+    var data = response.result;
+    oSpan[0].innerHTML = data[0].citynm;
+    oSpan[1].innerHTML = data[0].days;
+    oSpan[2].innerHTML = data[0].week;
+    oSpan[3].innerHTML = data[0].weather;
+    oSpan[4].innerHTML = data[0].temperature;
+    oSpan[5].innerHTML = data[0].winp;
+    oSpan[6].innerHTML = data[0].wind;
+
+    var aDiv = document.getElementsByClassName('future_box');
+    for (var i = 0; i < aDiv.length; i++) {
+        var aSpan = aDiv[i].getElementsByClassName('future_info');
+        aSpan[0].innerHTML = data[i + 1].days;
+        aSpan[1].innerHTML = data[i + 1].week;
+        aSpan[2].innerHTML = data[i + 1].weather;
+        aSpan[3].innerHTML = data[i + 1].temperature;
+    }
+    //根据返回数据，替换不同天气图片
+    changeImg(response);
+}
+
+function getTodayWeather(response) {
+    var oSpan = document.getElementsByClassName('info');
+    var data = response.results;
+    oSpan[7].innerHTML = data[0].pm25;
+    oSpan[8].innerHTML = data[0].index[4].zs;
+    oSpan[9].innerHTML = data[0].index[1].zs;
+    oSpan[10].innerHTML = data[0].index[2].zs;
+    oSpan[11].innerHTML = data[0].index[0].zs;
+}
+
+//根据获取到的数据更改页面中相应的图片
+function changeImg(data) {
+    var firstImg = document.getElementsByTagName("img")[0];
+    var firstWeatherId = data.result[0].weatid;
+    chooseImg(firstWeatherId, firstImg);
+
+    var aImg = document.getElementById('future_container').getElementsByTagName('img');
+    for (var j = 0; j < aImg.length; j++) {
+        var weatherId = data.result[j + 1].weatid;
+        chooseImg(weatherId, aImg[j]);
+    }
+}
+
+//选择图片
+function chooseImg(id, index) {
+    switch (id) {
+        case '1':
+            index.src = 'images/weather_icon/1.png';
+            break;
+        case '2':
+            index.src = 'images/weather_icon/2.png';
+            break;
+        case '3':
+            index.src = 'images/weather_icon/3.png';
+            break;
+        case '4':
+        case '5':
+        case '6':
+        case '8':
+        case '9':
+        case '10':
+        case '11':
+        case '12':
+        case '13':
+        case '20':
+        case '22':
+        case '23':
+        case '24':
+        case '25':
+        case '26':
+            index.src = 'images/weather_icon/4.png';
+            break;
+        case '7':
+            index.src = 'images/weather_icon/6.png';
+            break;
+        case '14':
+        case '15':
+        case '16':
+        case '17':
+        case '18':
+        case '27':
+        case '28':
+        case '29':
+            index.src = 'images/weather_icon/5.png';
+            break;
+        case '19':
+        case '21':
+        case '30':
+        case '31':
+        case '32':
+        case '33':
+            index.src = 'images/weather_icon/7.png';
+            break;
+        default:
+            index.src = 'images/weather_icon/8.png';
+    }
+}
+
+//根据城市名创建请求数据及url
+function createUrl() {
+    var cityName = '';
+    if (arguments.length == 0) {
+        cityName = document.getElementById('text').value;
+    } else {
+        cityName = arguments[0];
+    }
+    var urls = [];
+    urls[0] = 'https://sapi.k780.com/?app=weather.future&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json&jsoncallback=getWeather&weaid=' + encodeURI(cityName);
+    urls[1] = 'https://api.map.baidu.com/telematics/v3/weather?output=json&ak=FK9mkfdQsloEngodbFl4FeY3&callback=getTodayWeather&location=' + encodeURI(cityName);
+    return urls;
+}
+    </script>
+</body>
+</html>

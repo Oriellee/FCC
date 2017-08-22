@@ -41,16 +41,45 @@
 		<h1 id="title">CoolWeather</h1>
 		<div id="today">
 			<h3>今天天气怎么样？</h3>
-			<p>湿度：</p>
-			<p>穿衣指数：</p>
-			<p>洗车指数：</p>
-			<p>旅行指数：</p>
-			<p>锻炼指数：</p>
-			<p>紫外线指数：</p>
+			<p id="wet">湿度：</p>
+			<p id="dress">穿衣指数：</p>
+			<p id="car">洗车指数：</p>
+			<p id="trval">旅行指数：</p>
+			<p id="fitness">锻炼指数：</p>
+			<p id="ultraviolet">紫外线指数：</p>
 		</div>
 		<div id="tomorrow">
 			<h3>未来几天呢？</h3>
 		</div>
 	</div>
+	<script type="text/javascript" src= "jquery-3.2.1.js" ></script>
+	<script type="text/javascript">
+		$(function () {
+    		$.ajax(
+        	{
+            url:'http://v.juhe.cn/weather/ip',
+            type:'get',
+            data:{
+            	key:"ca953147724a725f35a1f71558437117",
+            	ip:"39.155.140.178",
+	            dtype:'json',
+	            format:1
+            },
+              error:function(){
+            	alert("获取失败");
+            },
+              success:function (data) {
+              	var $ = function(id){
+				return document.getElementById(id);
+				}
+              	console.log(data);
+               today.innerHTML = data.result.today.object;
+            }
+           }
+          )
+    	}
+    )
+
+	</script>
 </body>
 </html>
