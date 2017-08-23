@@ -41,7 +41,7 @@
 		<h1 id="title">CoolWeather</h1>
 		<div id="today">
 			<h3>今天天气怎么样？</h3>
-			<p id="wet">湿度：</p>
+			<p id="temperature">温度：</p>
 			<p id="dress">穿衣指数：</p>
 			<p id="car">洗车指数：</p>
 			<p id="trval">旅行指数：</p>
@@ -72,8 +72,23 @@
               	var $ = function(id){
 				return document.getElementById(id);
 				}
-              	console.log(data);
-               today.innerHTML = data.result.today.object;
+				temperature.innerHTML+=data.result.today.temperature;
+				dress.innerHTML+=data.result.today.dressing_index;
+				car.innerHTML+=data.result.today.wash_index;
+				trval.innerHTML+=data.result.today.travel_index;
+				fitness.innerHTML+=data.result.today.exercise_index;
+				ultraviolet.innerHTML+=data.result.today.uv_index;
+				for(var i = 0;i<6;i++){
+					var newWeather = document.createElement("p");
+					tomorrow.appendChild(newWeather);
+					newWeather.id = "day_2017082"+(i+3);
+				}
+				day_20170823.innerHTML = data.result.future.day_20170823.temperature;
+				day_20170824.innerHTML = data.result.future.day_20170824.temperature;
+				day_20170825.innerHTML = data.result.future.day_20170825.temperature;
+				day_20170826.innerHTML = data.result.future.day_20170826.temperature;
+				day_20170827.innerHTML = data.result.future.day_20170827.temperature;
+				day_20170828.innerHTML = data.result.future.day_20170828.temperature;
             }
            }
           )
