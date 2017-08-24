@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>维基百科搜索</title>
+	<style type="text/css">
+	*{
+		border:1px solid red;
+	}
+		html{
+			height: 99%;
+		}
+		body{
+			background-color: #092B40;
+			margin: 0;
+			height: 100%
+		}
+		#box{
+			position: relative;
+			top: calc(50% - 100px);
+			width: 80%;
+			margin: 0 auto;
+
+		}
+		#search{
+			height: 100px;
+			padding: 10px;
+		}
+		#random{
+			width: 150px;
+			height: 30px;
+			border-radius: 25px;
+			background-color: #092B40;
+			color: #fff;
+			font-size: 18px;
+			text-align: center;
+			border: 2px solid #D96F32;
+			outline: none;
+			display: block;
+			margin: 5px auto;
+		}
+		#random:active{
+			box-shadow: 0px 0px 4px 2px  #D96F32;
+		}
+		#from{
+			width: 300px;
+			height: 25px;
+			border-radius: 20px;
+			border: 3px solid #D96F32;
+			background-color: #092B40;
+			padding-left: 15px;
+			margin: 20px auto;
+		}
+		#input{
+			width: 240px;
+			height: 21px;
+			background-color: #092B40;
+			border: none;
+			outline: none;
+			color: #fff;
+		}
+		#del{
+			width: 20px;
+			height: 25px;
+			float: right;
+			margin-right: 10px;
+			font-size: 27px;
+			color: #D96F32;
+			background-color: #092B40;
+			border: none;
+			line-height: 25px;
+			outline: none;
+		}
+		#del:active{
+			opacity: 0.1;
+			transition: all 0.5s;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="search">
+			<button id="random">随机一下？</button>
+			<form id="from">
+				<input type="text" placeholder="请输入关键字" id="input">
+				<button id="del"> × </button>
+			</form>
+			
+		</div>
+		<div id="list"></div>
+	</div>
+	<script type="text/javascript" src= "jquery-3.2.1.js" ></script>
+	<script type="text/javascript">
+		
+		$(function search(){
+    		$.ajax(
+        	{
+					url:"https://en.wikipedia.org/w/api.php?",
+					type:"get",
+					data:{
+						"action": "query",
+						"format": "json",
+						"prop": "revisions",
+						"titles": "Main Page",
+						"rvprop": "content",
+						"generator":"search",
+						"gsrnamespace":0,
+						"gsrlimit":10,
+						"prop":"pageimages|extracts",
+						"pilimit":"max",
+						"exintro":1,
+						"explaintext":1,
+						"exsentences":1,
+						"exlimit":"max",
+						"gsrsearch":""
+
+						},
+					 error:function(){
+            			alert("获取失败");
+            			},
+             		 success:function (data) {
+					var $ = function(id){
+					return document.getElementById(id);
+						}
+					random.onclick = function(){
+					window.open("http://en.wikipedia.org/wiki/Special:Random");
+						}
+					console.log(data);
+					alert("获取成功");
+						}
+					}
+				)
+			}
+		)
+	</script>
+</body>
+</html>
