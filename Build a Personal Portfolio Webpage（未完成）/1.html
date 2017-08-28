@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>  
+<html lang="zh-cn">  
+<head>  
+<meta charset="utf-8" />  
+<title>Javascript</title>  
+<style>  
+*{margin: 0;padding: 0;}  
+#box{width: 100px;height: 100px;margin-left: 100px;}  
+</style>  
+</head>  
+<body>  
+<div id="box" style="background-color:#ccc;margin-top:100px;"></div>  
+<script>  
+window.onload = function(){   
+    var oBox = document.getElementById('box');  
+        console.log(oBox.style.width); 
+        console.log(oBox.style.height);         //结果为：100px  
+    console.log(oBox.style.background); //结果：rgb(204,204,204)，但ie下为空  
+    console.log(oBox.style.backgroundColor); //结果：rgb(204,204,204)或#ccc  
+    console.log(oBox.style.margin);     //结果为空  
+    console.log(oBox.style.marginTop);  //结果：100px  
+    oBox.style.height = '120px';        //设置样式  
+}  
+</script>  
+</body>  
+</html>  

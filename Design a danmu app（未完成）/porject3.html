@@ -21,11 +21,13 @@
 	<li></li>
 	<li></li>
 </ul>
-<input class="input" type="text">
-	<div class="row">
-		<button class="center-block shut">发射</button>
-		<button class="center-block clear">清屏</button>
-	</div>
+	<section>
+		<input class="input" type="text">
+		<div class="row">
+			<button class="center-block shut">发射</button>
+			<button class="center-block clear">清屏</button>
+		</div>
+	</section>
 <script type="text/javascript">
 	var box = document.querySelector(".box");
 	var li = document.querySelectorAll(".box li");
@@ -37,51 +39,43 @@
 		var num = Math.floor(Math.random()*(max-min)+min);
 		return num;
 	}
+	var arr = [50,100,150,200,250,300,350,400];
 	shut.onclick = function(){
-		var inputtext = input.value;
-		var text = li[random(0,li.length)];
-		console.log(li.length);
-		text.textContent = inputtext;
-		text.style.color = 'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) +')';
-		if(box.innerHTML=== ""){
-			
-		}else{
-			alert("haha");
+		var all = document.querySelectorAll(".movebox");
+		var movebox = document.createElement("div");
+		movebox.innerHTML = input.value;
+		movebox.className = "movebox";
+		box.appendChild(movebox);
+		movebox.style.top = arr[random(0,arr.length)]+"px";
+		movebox.style.color = 'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) +')'; 
+		timer(movebox);
+		clear1(all);
+	}
+	clear.onclick = function(){
+		var all = document.querySelectorAll(".movebox");
+		for(var i=0;i<all.length;i++){
+			box.removeChild(all[i]);
 		}
 	}
-	// function scroll(){
- //  var container = document.querySelector(".box");
- //    original = container.querySelectorAll(".box li");
- //    speed = arguments[1] || 10,
- //    clone = original.cloneNode(true);
- //    container.appendChild(clone);
- //    var rolling = function(){
- //      if(container.scrollTop == clone.offsetTop){
- //        container.scrollTop = 0;
- //      }else{
- //        container.scrollTop++;
- //      }
- //    }
- //    var timer = setInterval(rolling,speed)//设置定时器
- //    container.onmouseover=function() {clearInterval(timer)}//鼠标移到marquee上时，清除定时器，停止滚动
- //    container.onmouseout=function() {timer=setInterval(rolling,speed)}//鼠标移开时重设定时器
- //  }
- //  window.onload = function(){
-  
- //  }
-  
-
-
-	// var text;
-	// 
-	// // clear1.addEventListener("click",clearText);
-	// function shutText(){
-	// 	for(var i=0;i<=p1.length;i++){
-	// 		p1[i].innerHTML=== white.value;
-	// 		console.log(p1[i].innerHTML);
-	// 	}
-	// }
-
+	function timer(value){
+		var right = value.style.right;
+		var timer1 = setInterval(function(){
+			right++;
+			value.style.right = right+35+"px";
+			if(right >(document.body.clientWidth)){
+				clearInterval(timer);
+				console.log(document.body.clientWidth);
+				right = 0;
+				value.style.top = arr[random(0,arr.length)]+"px";
+				timer(value);
+			}
+		},15);
+	}
+	function clear1(value){
+		if(value.length>6){
+			box.removeChild(value[0]);
+		}
+	}
 </script>
 </body>
 </html>

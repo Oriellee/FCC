@@ -1,5 +1,5 @@
 
-body {
+section{
 	text-align: center;
 	}
 .box{
@@ -9,11 +9,17 @@ body {
 	list-style-type: none;
 	padding: 0;
 	}
+.movebox{
+	position: absolute;
+	right: 35px;
+	font-size: 18px;
+	font-weight: bold;
+
+}
 .box li{
 	width: 100%;
 	height: 50px;
 	margin: 0px;
-	border: 1px solid red;
 	outline: none;
 	text-align: right;
 	line-height: 50px;
