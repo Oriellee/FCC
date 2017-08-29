@@ -1,0 +1,2 @@
+1.监控页面实时的大小变化：window.onresize = function(){}.【Build a Personal Portfolio Webpage】
+2.一个json串，调用json.result.today中的六个子数据时，可以使用 for in循环遍历today中的子数据。依次推入一个新建数组中，然后调用。【显示本地天气】
