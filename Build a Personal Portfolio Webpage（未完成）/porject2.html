@@ -110,6 +110,7 @@
 		return document.getElementById(id);
 	}//获取对象。
 	var input1 = document.querySelectorAll("#list1 li input,textarea");
+	//设置点击按钮弹出层的隐藏和显示。
 	btn.onclick = function(){
 		if(ul2.style.display == "inline"){
 			ul2.style.display = "none";
@@ -117,7 +118,29 @@
 			ul2.style.display = "inline";
 			}
 		}
-	// 设置点击按钮弹出层的隐藏和显示。
+	window.onload = function(){
+		var top1=0;
+       window.onscroll=function(){
+              var top2=document.body.scrollTop || document.documentElement.scrollTop;
+               	if (ul2.style.display == "inline") {
+               		if(top2>top1){
+               		ul2.style="top:-198px;left:0; transition:0.3s;display:inline"
+               		}else{
+                   	ul2.style="top:0;left:0; transition:0.3s;display:inline"
+               		}
+               	}else if(ul2.style.display = "none"){
+               		ul2.removeAttribute('style');
+               	}
+                  top1=top2;
+      		}
+		}
+		// 判断页面大小，当页面大于768px时，清除ul2中的内联样式。
+	window.onresize = function(){
+			var size = document.body.clientWidth;
+			if(size>=768){
+				ul2.removeAttribute('style');
+			}
+		}
 
 	//点击返回顶端。
 	var timer = null;
@@ -161,14 +184,16 @@
 			break;
 		}
 	}
-	function show(){
-		var osTop = document.body.scrollTop;
-		if(osTop>0){
-			title.style.display = "none";
-		}
-		console.log(osTop);
-	}
-	show();
+	// function show(){
+	// 	var osTop = document.body.scrollTop;
+	// 	if(osTop>0){
+	// 		ul2.style="top:-198px;left:0; transition:0.3s;"
+ //               }else{
+ //                   ul2.style="top:0;left:0; transition:0.3s;"
+	// 		}
+	// 	}
+	// }
+	// show();
 	</script>
 
 

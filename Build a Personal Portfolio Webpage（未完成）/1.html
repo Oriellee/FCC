@@ -1,26 +1,37 @@
-<!DOCTYPE HTML>  
-<html lang="zh-cn">  
-<head>  
-<meta charset="utf-8" />  
-<title>Javascript</title>  
-<style>  
-*{margin: 0;padding: 0;}  
-#box{width: 100px;height: 100px;margin-left: 100px;}  
-</style>  
-</head>  
-<body>  
-<div id="box" style="background-color:#ccc;margin-top:100px;"></div>  
-<script>  
-window.onload = function(){   
-    var oBox = document.getElementById('box');  
-        console.log(oBox.style.width); 
-        console.log(oBox.style.height);         //结果为：100px  
-    console.log(oBox.style.background); //结果：rgb(204,204,204)，但ie下为空  
-    console.log(oBox.style.backgroundColor); //结果：rgb(204,204,204)或#ccc  
-    console.log(oBox.style.margin);     //结果为空  
-    console.log(oBox.style.marginTop);  //结果：100px  
-    oBox.style.height = '120px';        //设置样式  
-}  
-</script>  
-</body>  
-</html>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>滚动条的方向</title>
+<style>
+*{padding:0; margin:0}
+.nav{ height:100px; width:100%; background:rgba(0,0,0,0.5); position:fixed; top:-100px;left:0; transition:0.3s;}
+.nav.on{ top:0}
+</style>
+<script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+    var top1=0;
+       var nav=document.getElementById('nav');
+       window.onscroll=function(){
+               var top2=document.body.scrollTop || document.documentElement.scrollTop;
+               if(top2>top1){
+                   nav.style=" height:100px; width:100%; background:rgba(0,0,0,0.5); position:fixed; top:-100px;left:0; transition:0.3s;"
+               }else{
+                   nav.style=" height:100px; width:100%; background:rgba(0,0,0,0.5); position:fixed; top:0;left:0; transition:0.3s;"
+               }
+                  top1=top2;
+      }
+}
+</script>
+</head>
+<body>
+<div class="nav" id="nav">
+</div>
+<script>
+for(var i=0; i<100; i++){
+    document.write("<h1>"+i+"</h1>")    
+}
+</script>
+</body>
+</html>

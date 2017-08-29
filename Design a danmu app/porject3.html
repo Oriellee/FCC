@@ -64,7 +64,6 @@
 			value.style.right = right+35+"px";
 			if(right >(document.body.clientWidth)){
 				clearInterval(timer);
-				console.log(document.body.clientWidth);
 				right = 0;
 				value.style.top = arr[random(0,arr.length)]+"px";
 				timer(value);

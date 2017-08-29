@@ -57,14 +57,15 @@
 	#ul2{
 		width: 900px;
 		background-color: #FFE4E1;
-		margin:80px 100px 0;
 		position: fixed;
 		list-style-type: none;
 		padding: 0;
+		top: 0;
+		left: 0;
 		border-top: 2px solid #008080;
 		text-align: center;
 		line-height: 65px;
-		z-index: 999;
+		z-index: 1;
 		display: none;
 	}
 	#ul2 li button:hover{
@@ -344,9 +345,8 @@
 		width: 100%;
 		}
 	#ul2{
-		width: 80%;
-		margin:80px 10% 0;
-	}
+		display: none;
+		}
 	.logo img{
 		width: 50%;
 		max-width: 350px;
@@ -389,6 +389,11 @@
 }
 @media screen and (max-width: 768px){
 	#ul1{
+		display: none;
+	}
+	#ul2{
+		width: 80%;
+		margin:80px 10% 0;
 		display: none;
 	}
 	#btn{
