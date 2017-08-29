@@ -331,3 +331,34 @@ function createUrl() {
     </script>
 </body>
 </html>
+
+"future":{
+    "day_20170829":{
+        "temperature":"16℃~25℃",
+        "weather":"多云转晴",
+        "weather_id":{
+            "fa":"01",
+            "fb":"00"},
+        "wind":"南风微风",
+        "week":"星期二",
+        "date":"20170829"},
+    "day_20170830":{
+        "temperature":"18℃~27℃",
+        "weather":"多云",
+        "weather_id":{
+            "fa":"01",
+            "fb":"01"},
+        "wind":"西南风微风",
+        "week":"星期三",
+        "date":"20170830"}
+
+
+        var a = data.result.future;
+                var b=[];
+                for(var prop in a){
+                    console.log(a[prop].temperature);
+                    
+                    b.push(prop);
+                }
+                day_20170825.innerHTML = a[prop].temperature;
+                console.log(b[0]);
