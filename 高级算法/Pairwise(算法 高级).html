@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1</title>
+</head>
+<body>
+<script type="text/javascript">
+function pairwise(arr, arg) {
+  var result = [];
+  if(arr.length ===0){
+    return 0;
+  }
+  for(var i=0;i<arr.length;i++){
+    for(var j=0;j<arr.length;j++){
+      if(arr[i]+arr[j] === arg&&i!==j){
+        result.push(i,j);
+        delete arr[i];
+        delete arr[j];
+      }
+    }
+  }
+  var sum  = result.reduce(function(a,b){
+    return a+b;
+  });
+  return sum;
+}
+
+pairwise([1, 1, 1], 2);
+</script>
+</body>
+</html>
