@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>练习</title>
+</head>
+<style type="text/css">
+*{
+	border: 1px solid red;
+	padding: 0;
+	margin: 0;
+}
+	#box{
+		width: 100%;
+		height: 500px;
+		margin: 0;
+	}
+	#move{
+		width: 50px;
+		height: 100px;
+		position: absolute;
+		top: 2px;
+		left: 40%;
+		background-color: grey;
+	}
+</style>
+<body>
+	<div id="box">
+		<div id="move"></div>
+	</div>
+	<script type="text/javascript">
+		var $ = function(id){
+			return document.getElementById(id);
+		}
+	function timer(value,father){
+		var i = 1;
+		var timer=setInterval(function(){
+			var top1 = Number((getComputedStyle(value, null)['top']).replace("px",""));
+			var max = Number((getComputedStyle(father, null)['height']).replace("px",""));
+			var height = Number((getComputedStyle(value, null)['height']).replace("px",""));
+
+			
+			if(i<max-height){
+				var speed = Math.floor(top1/top1);
+				value.style.top = top1+speed+"px";
+			}
+			i++;
+			if(i>(max-height)){
+				speed = Math.floor(top1/-top1);
+				value.style.top = top1+speed+"px";
+				}
+			if(i>800){
+				i=0;
+				i++;
+				var speed = Math.floor(top1/top1);
+				value.style.top = top1+speed+"px";
+				}
+				console.log(i);
+		},20);
+	}
+	
+	timer(move,box);
+	</script>
+</body>
+</html>
