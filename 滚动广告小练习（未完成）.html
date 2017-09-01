@@ -32,14 +32,17 @@
 		var $ = function(id){
 			return document.getElementById(id);
 		}
-	function timer(value,father){
-		var i = 1;
+	function timer(value,father,num){
+		if(num!=null){
+			var i = num;
+		}else{
+			var i = 1;
+		}
 		var time=setInterval(function(){
 			var top1 = Number((getComputedStyle(value, null)['top']).replace("px",""));
 			var max = Number((getComputedStyle(father, null)['height']).replace("px",""));
 			var height = Number((getComputedStyle(value, null)['height']).replace("px",""));
 
-			
 			if(i<max-height){
 				var speed = Math.floor(top1/top1);
 				value.style.top = top1+speed+"px";
@@ -52,19 +55,22 @@
 			if(i>(max-height)*2){
 				i=0;
 				i++;
+				top1 = 2;
 				var speed = Math.floor(top1/top1);
 				value.style.top = top1+speed+"px";
 				}
 				console.log(i);
-				move.onmouseover = function(){
+				// console.log(num);
+				console.log(top1);
+		
+		},10);
+		move.onmouseover = function(){
 				clearInterval(time);
 				}
-
-		},20);
 	}
 	move.onmouseout = function(){
-		move.removeAttribute('style');
-				timer(move,box);
+		var num = Number((getComputedStyle(this, null)['top']).replace("px",""));
+				timer(move,box,num);
 				}
 	timer(move,box);
 	</script>
