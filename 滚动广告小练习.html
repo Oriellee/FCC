@@ -34,7 +34,7 @@
 		}
 	function timer(value,father){
 		var i = 1;
-		var timer=setInterval(function(){
+		var time=setInterval(function(){
 			var top1 = Number((getComputedStyle(value, null)['top']).replace("px",""));
 			var max = Number((getComputedStyle(father, null)['height']).replace("px",""));
 			var height = Number((getComputedStyle(value, null)['height']).replace("px",""));
@@ -49,16 +49,23 @@
 				speed = Math.floor(top1/-top1);
 				value.style.top = top1+speed+"px";
 				}
-			if(i>800){
+			if(i>(max-height)*2){
 				i=0;
 				i++;
 				var speed = Math.floor(top1/top1);
 				value.style.top = top1+speed+"px";
 				}
 				console.log(i);
+				move.onmouseover = function(){
+				clearInterval(time);
+				}
+
 		},20);
 	}
-	
+	move.onmouseout = function(){
+		move.removeAttribute('style');
+				timer(move,box);
+				}
 	timer(move,box);
 	</script>
 </body>

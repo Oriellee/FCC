@@ -3,3 +3,4 @@
 3.根据页面大小不同使用不同的css时，@media screen and (max-width: 1200px){}，中间的and前后必须有空格。
 4.Array.prototype.splice()：splice() 方法通过删除现有元素和/或添加新元素来更改一个数组的内容。
 5.通过【style】获取元素的css样式值时，只能获取行间样式。所以未设置行间样式时，获取值为空。可通过getComputedStyle 和 currentStyle 获取 行间样式/非行间样式/浏览器默认样式，但存在浏览器兼容问题，且不能设置样式。
+6.js清除行内样式：.removeAttribute('style');
