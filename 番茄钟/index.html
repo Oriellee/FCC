@@ -117,5 +117,40 @@
 			
 		</div>
 	</div>
+	<script type="text/javascript">
+		var $ = function(id){
+			return document.getElementById(id);
+		}
+		function less(text){
+			var num = text.innerHTML;
+			num --;
+			if(num<1){
+				num=0;
+			}
+			text.innerHTML = num;
+		}
+		function add(text){
+			var num = text.innerHTML;
+			num ++;
+			if(num>100){
+				num=100;
+				alert("最大时长为100分钟！");
+			}
+			
+			text.innerHTML = num;
+		}
+		breakAdd.onclick = function(){
+			add(breakText);
+		}
+		sessionAdd.onclick = function(){
+			add(sessionText);
+		}
+		breakLess.onclick = function(){
+			less(breakText);
+		}
+		sessionLess.onclick = function(){
+			less(sessionText);
+		}
+	</script>
 </body>
 </html>
