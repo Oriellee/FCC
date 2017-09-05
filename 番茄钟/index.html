@@ -77,7 +77,7 @@
 			font-size: 1.5em;
 			height: 25%;
 			font-family: Open Sans, Arial;
-			margin: 40px 0 0 0;
+			margin: 50px 0 0 0;
 			text-align: center;
 		}
 		#timeNum{
@@ -85,7 +85,7 @@
 			height: 35%;
 		}
 		#timeBack{
-			height: 300px;
+			height: 250px;
 			width: 300px;
 			background-color:#99CC00; 
 			position: absolute;
@@ -106,15 +106,14 @@
 			<div id="session">
 				<p>SESSION LENGTH</p>
 				<button id="sessionLess">-</button>
-				<span id="sessionText">5</span>
+				<span id="sessionText">2</span>
 				<button id="sessionAdd">+</button>
 			</div>
 		</div>
 		<div id="time">
-			<span id="timeBack"></span>
+			<!-- <span id="timeBack"></span> -->
 			<p id="timeText">Session</p>
-			<p id="timeNum">24:00</p>
-			
+			<p id="timeNum"></p>
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -125,7 +124,7 @@
 			var num = text.innerHTML;
 			num --;
 			if(num<1){
-				num=0;
+				num=1;
 			}
 			text.innerHTML = num;
 		}
@@ -144,12 +143,62 @@
 		}
 		sessionAdd.onclick = function(){
 			add(sessionText);
+			changeTime();
 		}
 		breakLess.onclick = function(){
 			less(breakText);
 		}
 		sessionLess.onclick = function(){
 			less(sessionText);
+			changeTime();
+		}
+		function changeTime(){
+			timeNum.innerHTML = sessionText.innerHTML;
+		}
+		function run(minute,second){
+			var timer = setInterval(function(){
+				if(minute === 0&&second === 0){
+					clearInterval(timer);
+					sessionAdd.disabled = false;
+					breakAdd.disabled = false;
+					sessionLess.disabled = false;
+					breakLess.disabled = false;
+				}
+				second--;
+				if(second<0){
+					second = 59;
+					minute = minute-1;
+				}
+				if(second<10){
+					var text = minute+":"+"0"+second;
+				}else{
+					var text  = minute+":"+second;
+				}
+				timeNum.innerHTML = text;
+				
+				console.log(minute,second);
+			},100);
+		}
+		changeTime();
+		var temp = true;
+		time.onclick = function(){
+			if(temp === true){
+				timeNum.innerHTML = sessionText.innerHTML;
+				var minute = Number(timeNum.innerHTML)-1;
+				var second = 60;
+				sessionAdd.disabled = true;
+				breakAdd.disabled = true;
+				sessionLess.disabled = true;
+				breakLess.disabled = true;
+				run(minute,second);
+				temp = false;
+			}else{
+				var minute = 0;
+				var second = 0;
+				run(minute,second);
+				temp = true;
+			}
+			console.log(temp);
 		}
 	</script>
 </body>
