@@ -64,10 +64,12 @@
 				console.log(top1);
 		
 		},10);
+		// 选中清除定时器的函数卸载父函数中。
 		move.onmouseover = function(){
 				clearInterval(time);
 				}
 	}
+	// 鼠标移出后重新开始函数的代码卸载父函数之外。
 	move.onmouseout = function(){
 		var num = Number((getComputedStyle(this, null)['top']).replace("px",""));
 				timer(move,box,num);
