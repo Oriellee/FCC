@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <title>维基百科搜索</title>
+    <style type="text/css">
+    html {
+        height: 99%;
+    }
+
+    body {
+        background-color: #092B40;
+        margin: 0;
+    }
+
+    #box {
+        width: 80%;
+        min-height: calc(100% - 60px);
+        margin: 30px auto;
+        padding: 0px;
+        min-height: 670px;
+    }
+
+    #search {
+        position: absolute;
+        top: calc(50% - 130px);
+        height: 130px;
+        padding: 10px;
+        width: 260px;
+        left: calc(50% - 140px);
+    }
+
+    #random {
+        width: 60%;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #092B40;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        border: 2px solid #D96F32;
+        outline: none;
+        display: block;
+        margin: 5px auto;
+    }
+
+    #random:active {
+        box-shadow: 0px 0px 4px 2px #D96F32;
+    }
+
+    #from {
+        width: 80%;
+        height: 25px;
+        border-radius: 20px;
+        border: 3px solid #D96F32;
+        background-color: #092B40;
+        padding-left: 15px;
+        margin: 15px auto;
+    }
+
+    #input1 {
+        width: 80%;
+        height: 21px;
+        background-color: #092B40;
+        border: none;
+        outline: none;
+        color: #fff;
+    }
+
+    #del {
+        width: 20px;
+        height: 25px;
+        float: right;
+        margin-right: 10px;
+        font-size: 27px;
+        color: #D96F32;
+        background-color: #092B40;
+        border: none;
+        line-height: 25px;
+        outline: none;
+    }
+
+    #del:active {
+        opacity: 0.1;
+        transition: all 0.5s;
+    }
+
+    .show {
+        width: 100%;
+        margin-top: 130px;
+    }
+
+    .show ul {
+        margin: 0;
+        list-style-type: none;
+        padding: 0px 5%;
+    }
+
+    .show ul li {
+        margin: 10px 0;
+        background-color: #E7E7E8;
+        padding: 10px;
+    }
+
+    .show ul li:hover {
+        border-left: 5px solid orange;
+        margin-left: -5px;
+        cursor: pointer;
+    }
+
+    .show ul li h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .show ul li p {
+        margin: 15px 0 0 0;
+        font-size: 14px;
+    }
+
+    #searchButton {
+        max-width: 100px;
+        width: 60%;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #092B40;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        border: 2px solid #D96F32;
+        outline: none;
+        display: block;
+        margin: 0 auto;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="search">
+            <button id="random">随机一下？</button>
+            <form id="from">
+                <input type="text" placeholder="请输入关键字" id="input1">
+                <button id="del"> × </button>
+            </form>
+            <button id="searchButton">搜索</button>
+        </div>
+        <div id="list" style="display: none;">
+            <ul>
+                <li>
+                    <h3></h3>
+                    <p></p>
+                </li>
+                <li>
+                    <h3></h3>
+                    <p></p>
+                </li>
+                <li>
+                    <h3></h3>
+                    <p></p>
+                </li>
+                <li>
+                    <h3></h3>
+                    <p></p>
+                </li>
+                <li>
+                    <h3></h3>
+                    <p></p>
+                </li>
+                <li>
+                    <h3></h3>
+                    <p></p>
+                </li>
+                <li>
+                    <h3></h3>
+                    <p></p>
+                </li>
+                <li>
+                    <h3></h3>
+                    <p></p>
+                </li>
+                <li>
+                    <h3></h3>
+                    <p></p>
+                </li>
+                <li>
+                    <h3></h3>
+                    <p></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#random").click(function() {
+            window.open("http://en.wikipedia.org/wiki/Special:Random");
+        });
+
+        function searchText() {
+            $.ajax({
+                url: "https://en.wikipedia.org/w/api.php?",
+                type: "get",
+                data: {
+                    "action": "query",
+                    "format": "json",
+                    "prop": "revisions",
+                    "rvprop": "content",
+                    "generator": "search",
+                    "gsrlimit": 10,
+                    "gsrsearch": $("#input1").val(),
+                    "gsrwhat": "text",
+                    "prop": 'extracts|info',
+                    "exsentences": 3,
+                    "exintro": "",
+                    "explaintext": "",
+                    "exlimit": 20,
+                },
+                error: function() {
+                    alert("获取失败");
+                },
+                success: function(data) {
+                    var father = data.query.pages;
+                    var newArr = [];
+                    for (var prop in father) {
+                        newArr.push(father[prop]);
+                    }
+                    $("#search").css('top', '10px');
+                    $("#list").css("display", "inline-block").addClass('show');
+                    console.log(newArr[0].pageid);
+                    for (var i = 0; i < newArr.length; i++) {
+                        $("#list ul li h3").eq(i).text(newArr[i].title);
+                        $("#list ul li p").eq(i).text(newArr[i].extract);
+                        $("#list ul li").eq(i).attr('href', "https://en.wikipedia.org/?curid=" + newArr[i].pageid);
+                    }
+                }
+            });
+        }
+        $("#list ul li").click(function(event) {
+            var $href = $(this).attr("href");
+            window.open($href);
+        });
+        $("#searchButton").click(function(event) {
+            searchText();
+        });
+        $("#input1").unbind('keyup');
+        // $("#input1").bind('keypress',function(event) {
+        // 	if (event.keyCode == "13") {
+        //        searchText();
+        //     }
+        // });
+    });
+    </script>
+</body>
+
+</html>
