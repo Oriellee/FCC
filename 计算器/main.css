@@ -1,0 +1,66 @@
+*{
+	/*border: 1px solid red;*/
+}
+html,body{
+	width: 99%;
+	height: 99%;
+	padding: 0;
+	margin: 0;
+	background-color: #56351E;
+}
+body{
+	width: 100%;
+	height: 100%;
+
+}
+#box{
+	width: 300px;
+	height: 350px;
+	background-color: #C47335;
+	padding: 5px;
+	margin:10px 8px;
+	position: absolute;
+	top: calc(50% - 185px);
+	left: calc(50% - 160px);
+	border-radius: 10px;
+	text-align: center;
+}
+#title{
+	width: 100%;
+	height: 20px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bolder;
+	font-style: italic;
+	font-family: 'Oleo Script', cursive;
+    margin: 10px 0 0 0;
+    color: #F19953;
+}
+#show{
+	width: 92%;
+	height: 30px;
+	background-color: #F19953;
+	margin: 10px auto;
+	text-align: right;
+	padding: 0 10px 0 0;
+	line-height: 30px;
+	color: #fff;
+	font-size: 14px;
+}
+#box table{
+	margin: 10px auto;
+	border-collapse:separate;
+  	border-spacing:4px;
+}
+#box table tr td{
+	background-color: #fff;
+	color: #F19953;
+	font-size: 13px;
+	width: 65px;
+	height: 45px;
+	cursor: pointer;
+}
+#box table tr td:hover{
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
