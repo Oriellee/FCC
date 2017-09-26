@@ -197,12 +197,12 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $("#random").click(function() {
-            window.open("http://en.wikipedia.org/wiki/Special:Random");
+            window.open("http://zh.wikipedia.org/wiki/Special:Random");
         });
 
         function searchText() {
             $.ajax({
-                url: "https://en.wikipedia.org/w/api.php?",
+                url: "https://zh.wikipedia.org/w/api.php?",
                 type: "get",
                 data: {
                     "action": "query",
@@ -234,7 +234,7 @@
                     for (var i = 0; i < newArr.length; i++) {
                         $("#list ul li h3").eq(i).text(newArr[i].title);
                         $("#list ul li p").eq(i).text(newArr[i].extract);
-                        $("#list ul li").eq(i).attr('href', "https://en.wikipedia.org/?curid=" + newArr[i].pageid);
+                        $("#list ul li").eq(i).attr('href', "https://zh.wikipedia.org/?curid=" + newArr[i].pageid);
                     }
                 }
             });
