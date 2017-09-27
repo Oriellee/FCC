@@ -25,6 +25,29 @@ $(function() {
         num.text(numText);
     }
 
+    function powerSwitch() {
+        if (runColor == true) {
+            $("#sessionAdd,#sessionLess").click(function(event) {
+                $("#timeNum").text($("#sessionText").text());
+                $("#timeBack").css('top', '300px');
+            });
+        } else {
+            $("#breakAdd,#breakLess").click(function(event) {
+                $("#timeNum").text($("#breakText").text());
+                $("#timeBack").css('top', '300px');
+            });
+
+        }
+    }
+
+    function changeSwitch() {
+        if (runColor == true) {
+            $("#sessionAdd,#sessionLess").removeAttr("disabled");
+        } else if (runColor == false) {
+            $("#breakAdd,#breakLess").removeAttr("disabled");
+        }
+    }
+
     function run() {
         if ($("#timeNum").text().length < 3) {
             var sum = (($("#timeNum").text()) * 60) - 1;
@@ -48,7 +71,6 @@ $(function() {
             }
             $("#timeNum").text(minute + ":" + second);
             $("#timeBack").css('top', Math.round(topNum) + "px");
-            console.log(runColor);
             if (minute == 0 && second == 00) {
                 clearInterval(greenTimer);
                 if (runColor == true) {
@@ -59,14 +81,12 @@ $(function() {
             }
         }, 50);
     }
-
     $(".add").click(function(event) {
         add($(this).siblings("span"));
     });
     $(".less").click(function(event) {
         less($(this).siblings("span"));
     });
-
 
     function pause() {
         $("#time").click(function(event) {
@@ -77,6 +97,7 @@ $(function() {
             } else if (status == "working") {
                 clearInterval(greenTimer);
                 changeSwitch();
+                powerSwitch();
                 status = "wait";
             }
         });
@@ -102,32 +123,8 @@ $(function() {
         runColor = true;
         status = "wait";
         $(".add,.less").removeAttr("disabled");
-
     }
 
-    function powerSwitch() {
-        if (runColor == true) {
-            $("#sessionAdd,#sessionLess").click(function(event) {
-                $("#timeNum").text($("#sessionText").text());
-                $("#timeBack").css('top', '300px');
-            });
-        } else if (runColor == false){
-            $("#breakAdd,#breakLess").click(function(event) {
-                // $("#timeNum").text($("#breakText").text());
-                // $("#timeBack").css('top', '300px');
-                alert("22");
-
-            });
-        }
-    }
-
-    function changeSwitch() {
-        if (runColor == true) {
-            $("#sessionAdd,#sessionLess").removeAttr("disabled");
-        } else if (runColor == false) {
-            $("#breakAdd,#breakLess").removeAttr("disabled");
-        }
-    }
     pause();
     powerSwitch();
 
