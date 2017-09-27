@@ -5,6 +5,14 @@ body {
     padding: 0px;
 }
 
+a:focus,
+input:focus,
+p:focus,
+div:focus {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
 #box {
     width: 60%;
     min-width: 420px;
@@ -75,7 +83,7 @@ body {
     position: relative;
     z-index: 20;
     overflow: hidden;
-    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 #timeText,
@@ -105,13 +113,12 @@ body {
     #box {
         width: 100%;
         min-width: 150px;
-        margin:20px 0 0 0;
+        margin: 20px 0 0 0;
     }
     #time {
         width: 250px;
         height: 250px;
         margin: 10px auto 0;
-
     }
     #timeText,
     #timeNum {
