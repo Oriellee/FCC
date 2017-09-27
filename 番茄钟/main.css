@@ -1,0 +1,101 @@
+body {
+    background-color: #333333;
+    color: #fff;
+    margin: 0px;
+    padding: 0px;
+}
+
+#box {
+    width: 60%;
+    min-width: 420px;
+    min-height: 500px;
+    margin: 80px auto;
+}
+
+#title {
+    display: block;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    font-family: 'Pacifico';
+    font-size: 3em;
+}
+
+#menu {
+    width: 100%;
+    display: flex;
+    margin: 30px 0;
+    text-align: center;
+}
+
+#break,
+#session {
+    display: block;
+    width: 50%;
+}
+
+#break p,
+#session p {
+    margin: 10px 0px;
+    font-family: Open Sans, Arial;
+    font-size: 12.8px;
+}
+
+#breakText,
+#sessionText {
+    font-family: Open Sans, Arial;
+    font-size: 1.8em;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: bold;
+}
+
+#menu button {
+    font-size: 1.5em;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#menu button:hover {
+    color: #989898;
+}
+
+#time {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    border: 4px solid #333333;
+    box-shadow: 0 0 0 2px #99CC00;
+    border-radius: 50%;
+    font-size: 2em;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+    overflow: hidden;
+}
+
+#timeText,
+#timeNum {
+    font-size: 1.5em;
+    height: 25%;
+    font-family: Open Sans, Arial;
+    margin: 50px 0 0 0;
+    text-align: center;
+}
+
+#timeNum {
+    font-size: 2em;
+    height: 35%;
+}
+
+#timeBack {
+    height: 300px;
+    width: 300px;
+    background-color: #99CC00;
+    position: absolute;
+    z-index: -1;
+    top: 300px;
+}

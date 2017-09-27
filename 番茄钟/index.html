@@ -1,205 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>番茄钟</title>
-	<style type="text/css">
-/*	*{
-		border: 1px solid red;
-	}*/
-		body{
-			background-color: #333333;
-			color: #fff;
-			margin: 0px;
-			padding: 0px;
-		}
-		#box{
-			width: 60%;
-			min-width: 420px;
-			min-height: 500px;
-			margin: 80px auto;
-		}
-		#title{
-			display: block;
-		    margin: 0 auto;
-		    color: white;
-		    text-align: center;
-		    font-family: 'Pacifico';
-		    font-size: 3em;
-		}
-		#menu{
-			width: 100%;
-			display: flex;
-			margin: 30px 0;
-			text-align: center;
-		}
-		#break,#session{
-			display: block;
-			width: 50%;
-		}
-		#break p,#session p{
-			margin: 10px 0px;
-			font-family: Open Sans, Arial;
-			font-size: 12.8px;
-		}
-		#breakText,#sessionText{
-			font-family: Open Sans, Arial;
-			font-size: 1.8em;
-		    padding-left: 10px;
-		    padding-right: 10px;
-		    font-family: bold;
-		}
-		#menu button{
-			font-size: 1.5em;
-			background-color: #333333;
-			color: #fff;
-			border: none;
-			outline: none;
-			margin-bottom: 10px;
-		}
-		#menu button:hover{
-			color: #989898;
-		}
-		#time{
-			border: 1px solid red;
-			width: 300px;
-			height: 300px;
-			margin: 20px auto;
-			border: 2px solid #99CC00;
-			border-radius: 50%;
-			font-size: 2em;
-			cursor: pointer;
-			position: relative;
-			z-index: 20;
-			overflow: hidden;
-		}
-		#timeText,#timeNum{
-			font-size: 1.5em;
-			height: 25%;
-			font-family: Open Sans, Arial;
-			margin: 50px 0 0 0;
-			text-align: center;
-		}
-		#timeNum{
-			font-size: 2em;
-			height: 35%;
-		}
-		#timeBack{
-			height: 250px;
-			width: 300px;
-			background-color:#99CC00; 
-			position: absolute;
-			z-index: -1;
-		}
-	</style>
+    <meta charset="utf-8">
+    <title>番茄钟</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
+
 <body>
-	<div id="box">
-		<h1 id="title">URNOTCHRISLEE</h1>
-		<div id="menu">
-			<div id="break">
-				<p>BREAK LENGTH</p>
-				<button id="breakLess">-</button>
-				<span id="breakText">5</span>
-				<button id="breakAdd">+</button>
-			</div>
-			<div id="session">
-				<p>SESSION LENGTH</p>
-				<button id="sessionLess">-</button>
-				<span id="sessionText">2</span>
-				<button id="sessionAdd">+</button>
-			</div>
-		</div>
-		<div id="time">
-			<!-- <span id="timeBack"></span> -->
-			<p id="timeText">Session</p>
-			<p id="timeNum"></p>
-		</div>
-	</div>
-	<script type="text/javascript">
-		var $ = function(id){
-			return document.getElementById(id);
-		}
-		function less(text){
-			var num = text.innerHTML;
-			num --;
-			if(num<1){
-				num=1;
-			}
-			text.innerHTML = num;
-		}
-		function add(text){
-			var num = text.innerHTML;
-			num ++;
-			if(num>100){
-				num=100;
-				alert("最大时长为100分钟！");
-			}
-			
-			text.innerHTML = num;
-		}
-		breakAdd.onclick = function(){
-			add(breakText);
-		}
-		sessionAdd.onclick = function(){
-			add(sessionText);
-			changeTime();
-		}
-		breakLess.onclick = function(){
-			less(breakText);
-		}
-		sessionLess.onclick = function(){
-			less(sessionText);
-			changeTime();
-		}
-		function changeTime(){
-			timeNum.innerHTML = sessionText.innerHTML;
-		}
-		function run(minute,second){
-			var timer = setInterval(function(){
-				if(minute === 0&&second === 0){
-					clearInterval(timer);
-					sessionAdd.disabled = false;
-					breakAdd.disabled = false;
-					sessionLess.disabled = false;
-					breakLess.disabled = false;
-				}
-				second--;
-				if(second<0){
-					second = 59;
-					minute = minute-1;
-				}
-				if(second<10){
-					var text = minute+":"+"0"+second;
-				}else{
-					var text  = minute+":"+second;
-				}
-				timeNum.innerHTML = text;
-				
-				console.log(minute,second);
-			},100);
-		}
-		changeTime();
-		var temp = true;
-		time.onclick = function(){
-			if(temp === true){
-				timeNum.innerHTML = sessionText.innerHTML;
-				var minute = Number(timeNum.innerHTML)-1;
-				var second = 60;
-				sessionAdd.disabled = true;
-				breakAdd.disabled = true;
-				sessionLess.disabled = true;
-				breakLess.disabled = true;
-				run(minute,second);
-				temp = false;
-			}else{
-				var minute = 0;
-				var second = 0;
-				run(minute,second);
-				temp = true;
-			}
-			console.log(temp);
-		}
-	</script>
+    <div id="box">
+        <h1 id="title">TIME</h1>
+        <div id="menu">
+            <div id="break">
+                <p>BREAK LENGTH</p>
+                <button id="breakLess" class="less">-</button>
+                <span id="breakText">2</span>
+                <button id="breakAdd" class="add">+</button>
+            </div>
+            <div id="session">
+                <p>SESSION LENGTH</p>
+                <button id="sessionLess" class="less">-</button>
+                <span id="sessionText">2</span>
+                <button id="sessionAdd" class="add">+</button>
+            </div>
+        </div>
+        <div id="time">
+            <span id="timeBack"></span>
+            <p id="timeText">Session</p>
+            <p id="timeNum">2</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
+
 </html>
