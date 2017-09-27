@@ -2,7 +2,7 @@ $(function() {
     var greenTimer = null;
     var status = "wait";
     var runColor = true;
-
+    var timeHeight = $("#time").css("height");
     function add(num) {
         var numText = num.text();
         if (numText > 24) {
@@ -105,7 +105,7 @@ $(function() {
 
     function halt() {
         runColor = false;
-        $("#timeBack").css('top', '300px');
+        $("#timeBack").css('top', timeHeight);
         $("#timeBack").css('background-color', 'rgb(255, 68, 68)');
         $("#timeText").text('Break!');
         $("#timeNum").text($("#breakText").text());
@@ -115,7 +115,7 @@ $(function() {
 
     function initial() {
         $("#timeBack").css({
-            "top": '300px',
+            "top":timeHeight,
             "background-color": "#99CC00"
         }, "1");
         $("#timeText").text('Session');

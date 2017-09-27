@@ -38,7 +38,7 @@ body {
 #session p {
     margin: 10px 0px;
     font-family: Open Sans, Arial;
-    font-size: 12.8px;
+    font-size: 0.5em;
 }
 
 #breakText,
@@ -75,6 +75,7 @@ body {
     position: relative;
     z-index: 20;
     overflow: hidden;
+    outline: none;
 }
 
 #timeText,
@@ -98,4 +99,25 @@ body {
     position: absolute;
     z-index: -1;
     top: 300px;
+}
+
+@media screen and (max-width:420px) {
+    #box {
+        width: 100%;
+        min-width: 150px;
+        margin: 80px auto;
+    }
+    #time {
+        width: 250px;
+        height: 250px;
+    }
+    #timeText,
+    #timeNum {
+        font-size: 1.2em;
+    }
+    #timeBack {
+        height: 250px;
+        width: 250px;
+        top: 250px;
+    }
 }
