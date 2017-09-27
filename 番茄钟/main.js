@@ -79,7 +79,7 @@ $(function() {
                     initial();
                 }
             }
-        }, 50);
+        }, 1000);
     }
     $(".add").click(function(event) {
         add($(this).siblings("span"));
