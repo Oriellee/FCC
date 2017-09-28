@@ -1,55 +1,119 @@
-*{
-	border: 1px solid black;
-}
-#box{
-	width: 500px;
-	height: 500px;
-	margin: 30px auto;
-	padding: 20px;
-	background-color: black;
-	border-collapse: separate;
-}
-#box tr td{
-	height: 33.33%;
-	border: 1px solid #ffa;
-	font-size: 2em;
-	text-align: center;
-	line-height: 33.33%;
-	color: #fff;
-}
-#box #top-left{
-	border-top: none;
-	border-left: none;
-}
-#box #top-center{
-	border-top: none;
-}
-#box #top-right{
-	border-top: none;
-	border-right: none;
-}
-#box #center-left{
-	border-left: none;
-}
-#box #center-right{
-	border-right: none;
-}
-#box #bottom-left{
-	border-left: none;
-	border-bottom: none;
-}
-#box #bottom-center{
-	border-bottom: none;
-}
-#box #bottom-right{
-	border-bottom: none;
-	border-right: none;
+* {
+    /*border: 1px solid black;*/
 }
 
-@media screen and (max-width: 768px){
-	#box{
-	width: 350px;
-	height: 350px;
-	margin: 10px auto;
-	}
+#box {
+    width: 500px;
+    height: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: black;
+    border-collapse: separate;
+}
+
+#box tr td {
+    height: 33.33%;
+    border: 1px solid #ffa;
+    font-size: 2em;
+    text-align: center;
+    line-height: 33.33%;
+    color: #fff;
+}
+
+#box #top-left {
+    border-top: none;
+    border-left: none;
+}
+
+#box #top-center {
+    border-top: none;
+}
+
+#box #top-right {
+    border-top: none;
+    border-right: none;
+}
+
+#box #center-left {
+    border-left: none;
+}
+
+#box #center-right {
+    border-right: none;
+}
+
+#box #bottom-left {
+    border-left: none;
+    border-bottom: none;
+}
+
+#box #bottom-center {
+    border-bottom: none;
+}
+
+#box #bottom-right {
+    border-bottom: none;
+    border-right: none;
+}
+
+#popUps {
+    width: 100%;
+    height: 100%;
+    margin-top: -30px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    /*visibility: hidden;*/
+}
+
+#shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#win {
+    width: 600px;
+    height: 220px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    background-color: #fff;
+    z-index: 999;
+    text-align: center;
+    padding: 20px;
+    top: 18%;
+    position: absolute;
+}
+#win h2,p{
+	background-color: black;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+#win h2{
+	border-bottom: 2px solid #ffa;
+	padding: 25px 0;
+}
+#win p{
+	padding: 10px 0;
+}
+#win button{
+	outline: none;
+}
+@media screen and (max-width: 768px) {
+    #box {
+        width: 350px;
+        height: 350px;
+        margin: 10px auto;
+    }
+    #popUps {
+        margin-top: -10px;
+    }
+    #win {
+    width: 70%;
+    height: auto;
+    padding: 20px;
+}
 }
