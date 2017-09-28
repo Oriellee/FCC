@@ -86,34 +86,40 @@
     top: 18%;
     position: absolute;
 }
-#win h2,p{
-	background-color: black;
-	color: #fff;
-	margin: 0;
-	padding: 0;
+
+#win h2,
+p {
+    background-color: black;
+    color: #fff;
+    margin: 0;
+    padding: 0;
 }
-#win h2{
-	border-bottom: 2px solid #ffa;
-	padding: 25px 0;
+
+#win h2 {
+    border-bottom: 2px solid #ffa;
+    padding: 25px 0;
 }
-#win p{
-	padding: 10px 0;
+
+#win p {
+    padding: 10px 0;
 }
-#win button{
-	outline: none;
+
+#win button {
+    outline: none;
 }
+
 @media screen and (max-width: 768px) {
     #box {
-        width: 350px;
-        height: 350px;
+        width: 300px;
+        height: 300px;
         margin: 10px auto;
     }
     #popUps {
         margin-top: -10px;
     }
     #win {
-    width: 70%;
-    height: auto;
-    padding: 20px;
-}
+        width: 70%;
+        height: auto;
+        padding: 20px;
+    }
 }
