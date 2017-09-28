@@ -62,10 +62,8 @@
     margin-top: -30px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    /*align-items: center;*/
-    /*visibility: hidden;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
 }
 
 #shadow {
@@ -84,6 +82,7 @@
     text-align: center;
     padding: 20px;
     top: 18%;
+    left: calc(50% - 300px);
     position: absolute;
 }
 
@@ -121,5 +120,7 @@ p {
         width: 70%;
         height: auto;
         padding: 20px;
+    	left: calc(50% - 35%);
+
     }
 }
