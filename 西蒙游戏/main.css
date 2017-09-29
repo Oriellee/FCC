@@ -1,0 +1,162 @@
+
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #F1F8E9;
+}
+button{
+	outline: none;
+}
+#box {
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: #333;
+    box-shadow: 0px 0px 0px 20px #333;
+    overflow: hidden;
+    top: calc(50% - 215px);
+    left: calc(50% - 215px);
+    position: absolute;
+}
+
+#boxTop,
+#boxBottom {
+    width: 100%;
+    height: 50%;
+}
+
+#green,
+#red,
+#yellow,
+#blue {
+    height: 98%;
+    width: 48%;
+    display: inline-block;
+}
+
+#green {
+    background-color: #80CBC4;
+    margin-right: 3%;
+}
+
+#red {
+    background-color: #EF9A9A;
+}
+
+#yellow {
+    margin-right: 3%;
+    margin-top: 3%;
+    background-color: #FFFF8D;
+}
+
+#blue {
+    background-color: #4FC3F7;
+}
+
+#boxCenter {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    border-radius: 100%;
+    top: calc(50% - 110px);
+    left: calc(50% - 110px);
+    background-color: #ECE7EE;
+    border: 12px solid #333;
+    overflow: hidden;
+}
+
+#boxCenter * {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+    color: black;
+}
+
+#boxCenter h3 {
+    width: 100%;
+    font-size: 4em;
+    font-weight: bolder;
+    margin-top: 10%;
+}
+
+#buttonGroup {
+    width: 80%;
+    height: 37%;
+    margin: 0 10%;
+}
+
+#buttonGroup>div {
+    height: 100%;
+}
+
+#buttonGroup>div {
+    font-size: 0.5em;
+    font-weight: bold;
+}
+
+#count p:nth-child(1) {
+    font-family: 'VT323', monospace;
+    color: #DC0D29;
+    font-size: 1em;
+    width: 50px;
+    background-color: #32050C;
+    border: 4px solid #222;
+    border-radius: 10px;
+    margin: auto;
+    height: 40px;
+    line-height: 35px;
+    margin:4px 0 5px;
+}
+
+#start button,#strict button:nth-child(2){
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 3px solid #222; 
+    margin: 18px 0 6px 0;
+    background-color: red;
+}
+#strict button:nth-child(1){
+	width: 10px;
+	height: 10px;
+	background-color:#222;
+	border-radius: 50%;
+	display: block;
+	margin: 2px auto;
+}
+#strict button:nth-child(2){
+    margin: 4px 0 6px 0;
+	background-color: yellow;
+}
+#power{
+	width: 50%;
+	margin: 0 25%;
+	height: 30px;
+	font-size: 0.5em;
+    font-weight: bold;
+}
+#powerbutton{
+	width: 40px;
+	height: 20px;
+	background-color: #333;
+	padding: 3%;
+}
+#powerbutton span{
+	 display: inline-block;
+	width: 50%;
+	height: 100%;
+	float: left;
+	background-color: #3193DE;
+	border-radius: 3px; 
+}
+#power>span{
+		clear: both;
+}
