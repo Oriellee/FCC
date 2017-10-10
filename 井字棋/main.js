@@ -12,7 +12,7 @@ $(function() {
         pieceA = $(this).text();
         pieceB = $(this).siblings('button').text();
         $("#popUps").css('display', 'none');
-        $("#box tr td").eq(randomNum).text(pieceA);
+        $("#box tr td").eq(randomNum).text(pieceB);
     });
 
     $("#box tr td").click(function(event) {

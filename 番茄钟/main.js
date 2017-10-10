@@ -2,7 +2,9 @@ $(function() {
     var greenTimer = null;
     var status = "wait";
     var runColor = true;
+    //定义初始变量。
     var timeHeight = $("#time").css("height");
+    // 获取当前div色块的高度。
     function add(num) {
         var numText = num.text();
         if (numText > 24) {
@@ -13,7 +15,7 @@ $(function() {
         }
         num.text(numText);
     }
-
+    // +号按钮函数
     function less(num) {
         var numText = num.text();
         if (numText < 2) {
@@ -24,7 +26,7 @@ $(function() {
         }
         num.text(numText);
     }
-
+    // -号按钮的函数
     function powerSwitch() {
         if (runColor == true) {
             $("#sessionAdd,#sessionLess").click(function(event) {
@@ -39,7 +41,7 @@ $(function() {
 
         }
     }
-
+    // 根据颜色判断当前状态后，使时间文字根据所判断的状态按钮改变。
     function changeSwitch() {
         if (runColor == true) {
             $("#sessionAdd,#sessionLess").removeAttr("disabled");
@@ -47,7 +49,7 @@ $(function() {
             $("#breakAdd,#breakLess").removeAttr("disabled");
         }
     }
-
+    // 取消按钮禁用
     function run() {
         if ($("#timeNum").text().length < 3) {
             var sum = (($("#timeNum").text()) * 60) - 1;
@@ -82,13 +84,14 @@ $(function() {
             }
         }, 1000);
     }
+    // 运行函数
     $(".add").click(function(event) {
         add($(this).siblings("span"));
     });
     $(".less").click(function(event) {
         less($(this).siblings("span"));
     });
-
+    // 点击-、+号按钮更改休息或者工作时长。
     function pause() {
         $("#time").click(function(event) {
             if (status == "wait") {
@@ -103,7 +106,7 @@ $(function() {
             }
         });
     }
-
+    // 判断程序是否在运行中。且随着程序的运行更改状态。
     function halt() {
         runColor = false;
         $("#timeBack").css('top', timeHeight);
@@ -113,7 +116,7 @@ $(function() {
 
         run();
     }
-
+    // 休息时间的函数。
     function initial() {
         $("#timeBack").css({
             "top":timeHeight,
@@ -125,7 +128,7 @@ $(function() {
         status = "wait";
         $(".add,.less").removeAttr("disabled");
     }
-
+    // 暂停运行。
     pause();
     powerSwitch();
 
