@@ -1,13 +1,17 @@
 $(function() {
+    var pieceA;
+    var pieceB;
+    var randomNum = random(0, $("#box tr td").length);
+
     function random(min, max) {
         var num = Math.floor(Math.random() * (max - min)) + min;
         return num;
     }
 
-    var pieceA;
-    var pieceB;
-    var randomNum = random(0, $("#box tr td").length);
+    function robot(value) {
+        value.siblings().text(pieceB);
 
+    }
     $(".btn").click(function(event) {
         pieceA = $(this).text();
         pieceB = $(this).siblings('button').text();
@@ -16,9 +20,10 @@ $(function() {
     });
 
     $("#box tr td").click(function(event) {
-    	if($(this).text() == ""){
-    		$(this).text(pieceB);
-    	}
+        if ($(this).text() == "") {
+            $(this).text(pieceA);
+            robot($(this));
+        }
     });
 
 })

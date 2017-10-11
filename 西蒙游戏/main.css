@@ -1,5 +1,3 @@
-
-
 html {
     width: 100%;
     height: 100%;
@@ -10,9 +8,11 @@ body {
     height: 100%;
     background-color: #F1F8E9;
 }
-button{
-	outline: none;
+
+button {
+    outline: none;
 }
+
 #box {
     width: 430px;
     height: 430px;
@@ -39,11 +39,12 @@ button{
     height: 98%;
     width: 48%;
     display: inline-block;
+    float: left;
 }
 
 #green {
     background-color: #80CBC4;
-    margin-right: 3%;
+    margin-right: 4%;
 }
 
 #red {
@@ -51,13 +52,14 @@ button{
 }
 
 #yellow {
-    margin-right: 3%;
-    margin-top: 3%;
+    margin-right: 4%;
+    margin-top: 4%;
     background-color: #FFFF8D;
 }
 
 #blue {
     background-color: #4FC3F7;
+    margin-top: 4%;
 }
 
 #boxCenter {
@@ -82,7 +84,7 @@ button{
 
 #boxCenter h3 {
     width: 100%;
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: bolder;
     margin-top: 10%;
 }
@@ -102,61 +104,104 @@ button{
     font-weight: bold;
 }
 
-#count p:nth-child(1) {
+#count div:nth-child(1) {
     font-family: 'VT323', monospace;
     color: #DC0D29;
     font-size: 1em;
-    width: 50px;
+    width: 100%;
     background-color: #32050C;
     border: 4px solid #222;
-    border-radius: 10px;
+    border-radius: 20%;
     margin: auto;
-    height: 40px;
-    line-height: 35px;
-    margin:4px 0 5px;
+    height: 55%;
+    line-height: 3;
+    margin: 10% 0 10%;
 }
 
-#start button,#strict button:nth-child(2){
-    width: 25px;
-    height: 25px;
+#start button,
+#strict button:nth-child(2) {
+    width: 48%;
+    height: 35%;
     border-radius: 50%;
-    border: 3px solid #222; 
-    margin: 18px 0 6px 0;
+    border: 3px solid #222;
+    margin: 35% 0 10% 0;
     background-color: red;
+    box-shadow: 0px 1px 2px 1px #32050C;
 }
-#strict button:nth-child(1){
-	width: 10px;
-	height: 10px;
-	background-color:#222;
-	border-radius: 50%;
-	display: block;
-	margin: 2px auto;
+
+#strict button:nth-child(1) {
+    width: 14%;
+    height: 10.1%;
+    background-color: #222;
+    border-radius: 50%;
+    display: block;
+    margin: 10% auto 0;
+    border: none;
 }
-#strict button:nth-child(2){
-    margin: 4px 0 6px 0;
-	background-color: yellow;
+
+#strict button:nth-child(2) {
+    margin: 10% 0 10%;
+    background-color: yellow;
 }
-#power{
-	width: 50%;
-	margin: 0 25%;
-	height: 30px;
-	font-size: 0.5em;
+
+#power {
+    width: 50%;
+    margin: 0 25%;
+    height: 30px;
+    font-size: 0.5em;
     font-weight: bold;
 }
-#powerbutton{
-	width: 40px;
-	height: 20px;
-	background-color: #333;
-	padding: 3%;
+
+#powerbutton {
+    width: 40%;
+    height: 66%;
+    background-color: #333;
+    padding: 3%;
 }
-#powerbutton span{
-	 display: inline-block;
-	width: 50%;
-	height: 100%;
-	float: left;
-	background-color: #3193DE;
-	border-radius: 3px; 
+
+#powerbutton span {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: #3193DE;
+    border-radius: 3px;
 }
-#power>span{
-		clear: both;
+
+
+@media screen and (max-width: 470px) {
+    #box {
+        width: 260px;
+        height: 260px;
+        top: calc(50% - 130px);
+        left: calc(50% - 130px);
+        box-shadow: 0px 0px 0px 15px #333;
+    }
+    #boxCenter {
+        width: 130px;
+        height: 130px;
+        top: calc(50% - 65px);
+        left: calc(50% - 65px);
+        border: 8px solid #333;
+        font-size: 0.7em;
+    }
+    #boxCenter h3 {
+        font-size: 2.5em;
+    }
+    #boxCenter p,
+    #power {
+        font-size: 9px;
+        -webkit-transform: scale(0.7);
+        -o-transform: scale(1);
+    }
+    #count div:nth-child(1) {
+        line-height: 1.5;
+    }
+    #count>p {
+        margin: -8px;
+    }
+    #power {
+        width: 100%;
+        margin: 0;
+    }
 }
