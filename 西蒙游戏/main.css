@@ -2,7 +2,6 @@ html {
     width: 100%;
     height: 100%;
 }
-
 body {
     width: 100%;
     height: 100%;
@@ -107,17 +106,21 @@ button {
 #count div:nth-child(1) {
     font-family: 'VT323', monospace;
     color: #DC0D29;
-    font-size: 1em;
+    font-size: 3em;
+    font-weight: bolder;
     width: 100%;
     background-color: #32050C;
     border: 4px solid #222;
     border-radius: 20%;
     margin: auto;
     height: 55%;
-    line-height: 3;
-    margin: 10% 0 10%;
+    line-height: 1.5;
+    margin: 10% 0 0 0;
+    vertical-align: top;
 }
-
+#count>p {
+        margin-top: 10%;
+    }
 #start button,
 #strict button:nth-child(2) {
     width: 48%;
@@ -150,6 +153,7 @@ button {
     height: 30px;
     font-size: 0.5em;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #powerbutton {
@@ -195,7 +199,9 @@ button {
         -o-transform: scale(1);
     }
     #count div:nth-child(1) {
-        line-height: 1.5;
+        line-height: 1.2;
+        text-align: center;
+        font-size: 1em;
     }
     #count>p {
         margin: -8px;
