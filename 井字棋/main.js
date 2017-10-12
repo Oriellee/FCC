@@ -46,6 +46,7 @@ $(function() {
         var robotNum = $("#box tr td").index(list[num]);
         checkNum[robotNum] = -1;
         setTimeout(check, 10);
+        console.log(list.length);
 
     }
 
