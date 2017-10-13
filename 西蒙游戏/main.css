@@ -39,25 +39,27 @@ button {
     width: 48%;
     display: inline-block;
     float: left;
+    outline: none;
+    border: none;
 }
 
 #green {
-    background-color: #80CBC4;
+    background-color: #1BBC9B;
     margin-right: 4%;
 }
 
 #red {
-    background-color: #EF9A9A;
+    background-color: #EF4836;
 }
 
 #yellow {
     margin-right: 4%;
     margin-top: 4%;
-    background-color: #FFFF8D;
+    background-color: #F5D76E;
 }
 
 #blue {
-    background-color: #4FC3F7;
+    background-color: #52B3D9;
     margin-top: 4%;
 }
 
@@ -199,9 +201,10 @@ button {
         -o-transform: scale(1);
     }
     #count div:nth-child(1) {
-        line-height: 1.2;
+        line-height: 1.5;
         text-align: center;
         font-size: 1em;
+        margin-top: 5px;
     }
     #count>p {
         margin: -8px;

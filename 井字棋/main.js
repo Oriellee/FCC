@@ -28,13 +28,11 @@ $(function() {
             value.text(pieceA);
             var playerNum = $("#box tr td").index(value);
             checkNum[playerNum] = 1;
-            robot(pieceB);
-
+            check("player");
         }
     }
 
     function robot(pieceB) {
-        check();
         var list = [];
         for (var i = 0; i < $("#box tr td").length; i++) {
             if ($("#box tr td").eq(i).text() == "") {
@@ -45,12 +43,10 @@ $(function() {
         list[num].text(pieceB);
         var robotNum = $("#box tr td").index(list[num]);
         checkNum[robotNum] = -1;
-        setTimeout(check, 10);
-        console.log(list.length);
-
+        check("robot");
     }
 
-    function check() {
+    function check(value) {
         if (checkNum[0] + checkNum[1] + checkNum[2] == 3 ||
             checkNum[3] + checkNum[4] + checkNum[5] == 3 ||
             checkNum[6] + checkNum[7] + checkNum[8] == 3 ||
@@ -59,8 +55,7 @@ $(function() {
             checkNum[2] + checkNum[5] + checkNum[8] == 3 ||
             checkNum[0] + checkNum[4] + checkNum[8] == 3 ||
             checkNum[2] + checkNum[4] + checkNum[6] == 3) {
-            alert("赢咯~");
-            clear();
+            last("你赢了！");
         } else if (
             checkNum[0] + checkNum[1] + checkNum[2] == -3 ||
             checkNum[3] + checkNum[4] + checkNum[5] == -3 ||
@@ -70,16 +65,32 @@ $(function() {
             checkNum[2] + checkNum[5] + checkNum[8] == -3 ||
             checkNum[0] + checkNum[4] + checkNum[8] == -3 ||
             checkNum[2] + checkNum[4] + checkNum[6] == -3) {
-            alert("你输啦！");
-            clear();
+            last("你输了!");
         } else if (checkNum.indexOf(0) < 0) {
+            last("平局！");
+        } else {
+            last(value);
+        }
+    }
+
+    function last(value) {
+        if (value == "你赢了！") {
+            alert("你赢了！");
+            clear();
+        } else if (value == "你输了!") {
+            alert("你输了!");
+            clear();
+        } else if (value == "平局！") {
             alert("平局！");
             clear();
-        } else {}
+        } else if (value == "player") {
+            robot(pieceB);
+        } else if (value == "robot") {
+
+        }
     }
 
     function clear() {
-
         for (var j = 0; j < checkNum.length; j++) {
             checkNum[j] = 0;
         }
@@ -87,9 +98,6 @@ $(function() {
             $("#box tr td").eq(z).text("");
         }
         $("#popUps").css('display', 'inline-block');
-        console.log(checkNum);
-
-
     }
 
 })
