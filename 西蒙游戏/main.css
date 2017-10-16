@@ -134,14 +134,14 @@ button {
     box-shadow: 0px 1px 2px 1px #32050C;
 }
 
-#strict button:nth-child(1) {
+#strict>span {
     width: 14%;
     height: 10.1%;
     background-color: #222;
-    border-radius: 50%;
+    border-radius: 100%;
     display: block;
-    margin: 10% auto 0;
-    border: none;
+    margin: 10% auto 1%;
+    border: 1px solid black;
 }
 
 #strict button:nth-child(2) {
