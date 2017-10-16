@@ -201,7 +201,7 @@ button {
         -o-transform: scale(1);
     }
     #count div:nth-child(1) {
-        line-height: 1.5;
+        line-height: 2;
         text-align: center;
         font-size: 1em;
         margin-top: 5px;
