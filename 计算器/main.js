@@ -13,24 +13,24 @@ $(function() {
             text === "-" ||
             text === "+" ||
             text === ".") {
-        	if(clear === false){
-        		calc+=text;
-        		show.text(calc);
-        	}else{
-        		calc = text;
-        		show.text(calc);
-        		clear = false;
-        	}
+            if(clear === false){
+                calc+=text;
+                show.text(calc);
+            }else{
+                calc = text;
+                show.text(calc);
+                clear = false;
+            }
         }else if(text === "AC"){
-        	calc = "";
-        	show.text("");
+            calc = "";
+            show.text("");
         }else if(text === "CE"){
-        	calc = calc.slice(0, -1);
-        	show.text(calc);
+            calc = calc.slice(0, -1);
+            show.text(calc);
         }else if(text === "="){
-        	ans = eval(calc);
-        	show.text(ans);
-        	clear = true;
+            ans = eval(calc);
+            show.text(ans);
+            clear = true;
         }
     });
-})
+});

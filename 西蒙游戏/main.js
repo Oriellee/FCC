@@ -1,3 +1,14 @@
+// Hello.
+//
+// This is JSHint, a tool that helps to detect errors and potential
+// problems in your JavaScript code.
+//
+// To start, simply enter some JavaScript anywhere on this page. Your
+// report will appear on the right side.
+//
+// Additionally, you can toggle specific options in the Configure
+// menu.
+
 $(function() {
     var game = {
             level: 0,
@@ -34,7 +45,7 @@ $(function() {
     });
     // 开始键
     $("#strict>button:nth-child(2)").click(function(event) {
-        if (strict == false) {
+        if (strict === false) {
             $("#strict>span").css('background-color', 'red');
             strict = true;
         } else {
@@ -106,7 +117,7 @@ $(function() {
     // 将所点击的色块加入到玩家队列中。
     function check() {
         if (game.player.length < 1) {
-            if (strict == false) {
+            if (strict === false) {
                 setTimeout(function() {
                     $("#count>div").text("! !");
                 }, 200);
@@ -174,4 +185,4 @@ $(function() {
         $("#green,#red,#yellow,#blue").attr('disabled', 'true');
     }
     // 关闭程序效果。
-})
+});
