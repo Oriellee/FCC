@@ -31,12 +31,10 @@ $(function() {
         if (runColor == true) {
             $("#sessionAdd,#sessionLess").click(function(event) {
                 $("#timeNum").text($("#sessionText").text());
-                $("#timeBack").css('top', '300px');
             });
         } else {
             $("#breakAdd,#breakLess").click(function(event) {
                 $("#timeNum").text($("#breakText").text());
-                $("#timeBack").css('top', '300px');
             });
 
         }
