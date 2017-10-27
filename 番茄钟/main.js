@@ -31,10 +31,14 @@ $(function() {
         if (runColor == true) {
             $("#sessionAdd,#sessionLess").click(function(event) {
                 $("#timeNum").text($("#sessionText").text());
+                $("#timeBack").css('top', $("#timeBack").height());
+
             });
         } else {
             $("#breakAdd,#breakLess").click(function(event) {
                 $("#timeNum").text($("#breakText").text());
+                $("#timeBack").css('top', $("#timeBack").height());
+
             });
 
         }
@@ -62,7 +66,6 @@ $(function() {
         var topNum = $("#timeBack").css('top').replace("px", "");
         var speed = topNum / sum;
         greenTimer = setInterval(function() {
-            console.log($("#timeBack").css('top'));
             sum--;
             topNum -= speed;
             var minute = Math.floor(sum / 60);
