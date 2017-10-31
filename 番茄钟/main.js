@@ -74,7 +74,7 @@ $(function() {
                 second = "0" + second;
             }
             $("#timeNum").text(minute + ":" + second);
-            $("#timeBack").css('top', Math.round(topNum-speed) + "px");
+            $("#timeBack").css('top', Math.round(topNum - speed) + "px");
             if (minute == 0 && second == 00) {
                 clearInterval(greenTimer);
                 if (runColor == true) {
@@ -120,7 +120,7 @@ $(function() {
     // 休息时间的函数。
     function initial() {
         $("#timeBack").css({
-            "top":timeHeight,
+            "top": timeHeight,
             "background-color": "#99CC00"
         }, "1");
         $("#timeText").text('Session');
